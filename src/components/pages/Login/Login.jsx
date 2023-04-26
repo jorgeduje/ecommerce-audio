@@ -10,14 +10,14 @@ const Login = () => {
         <div className="inputsLogin">
           <div className="cajaEmailLogin">
             <label className="loginEmail">Email Address</label>
-            <input type="email" className="emailLogin" />
+            <input type="email" className="emailLogin" placeholder="alexei@mail.com"/>
           </div>
           <div className="cajaPassLogin">
             <label className="loginPassword">Password</label>
-            <input type="password" className="passLogin" />
+            <input type="password" className="passLogin" placeholder="12345"/>
           </div>
         </div>
-        <button></button>
+        <button className="botonLogin">Continue</button>
       </form>
     </div>
   );
