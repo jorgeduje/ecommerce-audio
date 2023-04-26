@@ -1,7 +1,6 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import styles from "./Footer.module.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -9,8 +8,12 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../../../hooks/useWindowSize";
 
-const menu = ["home", "headphones", "speakers", "earphones"];
-
+const menu = [
+  { id: 1, title: "home", path: "/" },
+  { id: 2, title: "headphones", path: "/" },
+  { id: 3, title: "speakers", path: "/" },
+  { id: 4, title: "earphones", path: "/" },
+];
 const Footer = () => {
   const size = useWindowSize();
   return (
@@ -21,14 +24,14 @@ const Footer = () => {
           <div className={styles.items}>
             {menu.map((item) => {
               return (
-                <Typography
-                  key={item}
-                  component="p"
+                <Link
+                  key={item.id}
                   sx={{ flexGrow: 1 }}
                   className={styles.item}
+                  to={item.path}
                 >
-                  {item}
-                </Typography>
+                  {item.title}
+                </Link>
               );
             })}
           </div>
