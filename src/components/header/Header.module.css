@@ -1,6 +1,5 @@
 .navBarContainer {
     padding: 0 10rem;
-    background-color: #000000 !important;
     height: 6rem;
     justify-content: center;
 }
@@ -11,6 +10,10 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
     height: 100%;
+}
+
+.bar .menu {
+    display: none;
 }
 
 .bar .name {
@@ -38,4 +41,18 @@
 
 .cartIcon:hover {
     color: #d87d4a;
+}
+
+@media (max-width:800px) {
+    .navBarContainer {
+        padding: 0 2.5rem;
+    }
+    .bar .menu {
+        display: block;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+    }
+    .bar .items {
+        display: none;
+    }
 }
