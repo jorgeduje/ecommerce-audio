@@ -19,6 +19,7 @@ const Home = () => {
         <Grid item xs={12} md={6}>
           <img src="https://res.cloudinary.com/dkwjizhdg/image/upload/v1682512392/e-commerce/headsphones_fqjywk.jpg" alt="headphones" />
         </Grid>
+        
       </Grid>
     </div>
   );
