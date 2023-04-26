@@ -15,7 +15,6 @@ const Header = () => {
       <AppBar className={styles.navBarContainer} position="static">
         <Toolbar className={styles.bar}>
           <img src="src/assets/audio.png" alt="title" className={styles.name} />
-
           <div className={styles.items}>
             {menu.map((item) => {
               return (
