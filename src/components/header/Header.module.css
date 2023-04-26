@@ -1,0 +1,39 @@
+.navBarContainer {
+    padding: 0 10rem;
+    background-color: #000000 !important;
+    height: 6rem;
+    justify-content: center;
+}
+
+.navBarContainer .bar {
+    padding: 0 !important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navBarContainer .bar .name {
+    height: 1.5rem;
+    width: auto;
+}
+
+.navBarContainer .bar .items {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.navBarContainer .bar .items .item {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+.navBarContainer .bar .items .item:hover {
+    color: #d87d4a;
+}
+
+.cartIcon:hover {
+    color: #d87d4a;
+}
