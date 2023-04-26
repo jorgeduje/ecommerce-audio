@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
-import { useWindowSize } from "../../hooks/useWindowSize";
+import { useWindowSize } from "../../../hooks/useWindowSize";
 
 const menu = ["home", "headphones", "speakers", "earphones"];
 
@@ -38,9 +38,9 @@ const Footer = () => {
             <div className={styles.descriptionIcons}>
               <p className={styles.description}>
                 Audiophile is an all in one stop to fulfill your audio needs.
-                We're a small team of music lovers and sound specialists who are
+                Were a small team of music lovers and sound specialists who are
                 devoted to helping you get the most out of personal audio. Come
-                and visit our demo facility - we’re open 7 days a week.
+                and visit our demo facility - were open 7 days a week.
               </p>
               <section className={styles.icons}>
                 <Link to="https://www.facebook.com/" className={styles.social}>
@@ -62,9 +62,9 @@ const Footer = () => {
           <>
             <p className={styles.description}>
               Audiophile is an all in one stop to fulfill your audio needs.
-              We're a small team of music lovers and sound specialists who are
+              Were a small team of music lovers and sound specialists who are
               devoted to helping you get the most out of personal audio. Come
-              and visit our demo facility - we’re open 7 days a week.
+              and visit our demo facility - were open 7 days a week.
             </p>
             <Box className={styles.bottom}>
               <p className={styles.copyRights}>

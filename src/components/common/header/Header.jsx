@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import styles from "./Header.module.css";
-import { useWindowSize } from "../../hooks/useWindowSize";
+import { useWindowSize } from "../../../hooks/useWindowSize";
 import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 
