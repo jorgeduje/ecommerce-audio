@@ -12,7 +12,15 @@ const menu = ["home", "headphones", "speakers", "earphones"];
 const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar className={styles.navBarContainer} position="static">
+      <AppBar
+        sx={{
+          padding: "0 10rem",
+          backgroundColor: "secondary.third",
+          height: "6rem",
+          justifyContent: "center",
+        }}
+        position="static"
+      >
         <Toolbar className={styles.bar}>
           <img src="src/assets/audio.png" alt="title" className={styles.name} />
           <div className={styles.items}>
