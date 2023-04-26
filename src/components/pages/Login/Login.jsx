@@ -1,8 +1,12 @@
 // import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./Login.css";
 import { Box, Button } from "@mui/material";
+import { login } from "../../../store/auth/authSlice";
 
 const Login = () => {
+
+  const dispatch = useDispatch()
   return (
     <Box
       sx={{
@@ -62,6 +66,8 @@ const Login = () => {
           <button className="botonLogin">Continue</button>
         </form>
       </Box>
+
+      <Button onClick={()=>dispatch(login({email: "juan@gmail.com", dni: 36543412}))}>Ingresar</Button>
     </Box>
   );
 };
