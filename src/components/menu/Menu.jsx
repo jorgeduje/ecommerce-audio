@@ -11,23 +11,8 @@ import styles from './Menu.module.css'
 
 const menu = ["home", "headphones", "speakers", "earphones"];
 
-const Menu = () => {
-  const [state, setState] = React.useState({
-    left: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
+const Menu = ({ state, toggleDrawer}) => {
+ 
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
