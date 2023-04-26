@@ -27,6 +27,8 @@
 .footerContainer .bar .items .item {
     font-size: 13px;
     font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 25px;
 }
 
 .footerContainer .bar .items .item:hover {
