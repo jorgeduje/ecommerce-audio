@@ -1,5 +1,6 @@
 import { Typography, Button, Box } from "@mui/material";
 const Home = () => {
+
   return (
     <Box
       sx={{

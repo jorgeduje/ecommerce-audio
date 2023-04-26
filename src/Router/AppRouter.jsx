@@ -1,12 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { menuRouter } from "./menuRouter";
+import Layout from '../Router/layout/Layout';
 
 const AppRouter = () => {
   return (
     <Routes>
-      {menuRouter.map(({ id, path, Element }) => (
-        <Route key={id} path={path} element={<Element />} />
-      ))}
+      <Route path="/" element={<Layout/>}>
+        {menuRouter.map(({ id, path, Element }) => (
+          <Route key={id} path={path} element={<Element />} />
+        ))}
+      </Route>
     </Routes>
   );
 };
