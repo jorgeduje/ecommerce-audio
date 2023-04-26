@@ -1,8 +1,19 @@
+import { useSelector } from "react-redux"
+
+
 
 const Home = () => {
+
+  const { isLogged, user } = useSelector( (store)=> store.auth )
+  
+
   return (
     <div>
-        <h1>Este es el home</h1>
+      {
+        isLogged ? <h1>Te doy permiso {user.email}</h1> :  <h1>No Te doy permiso</h1>
+      }
+
+
     </div>
   )
 }
