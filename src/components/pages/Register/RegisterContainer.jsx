@@ -5,7 +5,7 @@ import Register from "./Register";
 import * as Yup from "yup";
 
 const RegisterContainer = () => {
-const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -17,6 +17,7 @@ const [showPassword, setShowPassword] = useState(false);
     initialValues: {
       name: "",
       lastName: "",
+      phone: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -27,32 +28,45 @@ const [showPassword, setShowPassword] = useState(false);
     },
     validationSchema: Yup.object().shape({
       name: Yup.string()
-        .required("Este es campo es obligatorio")
-        .min(3, " el nombre es muy corto"),
-      lastName: Yup.string().required("Este es campo es obligatorio"),
+        .required("This field is required")
+        .min(3, "The name should have a minimum of 3 letters."),
+      lastName: Yup.string().required("This field is required"),
       email: Yup.string()
-        .email("El texto no corresponde a un email")
-        .required("Este es campo es obligatorio"),
+        .email("The entered text doesnt match with an email acount")
+        .required("This field is required"),
       password: Yup.string()
-        .required("Este es campo es obligatorio")
-        .min(6, "la contraseña es muy corta")
-        .max(15, "la contraseña es muy larga")
+        .required("This field is required")
+        .min(
+          6,
+          "The password is too short, it should have a minimum of 6 characters"
+        )
+        .max(
+          15,
+          "The password is too long, it should have a maximum of 15 characters"
+        )
         .matches(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,15}$/, {
           message:
-            "La contraseña debe tener al menos una minuscula, una mayuscula, un numero y un simbolo",
+            "The password field should have a lower case, a upper case, a spacial character, and a number",
         }),
       confirmPassword: Yup.string()
-        .required("Este es campo es obligatorio")
-        .oneOf([Yup.ref("password"), null], "Las contraseñas no coinciden"),
+        .required("This field is required")
+        .oneOf(
+          [Yup.ref("password"), null],
+          "The entered text doesnt match the password"
+        ),
+      phone: Yup.number()
+        .required("This field is required")
+        .min(7, "Cellphone number field should have at least 7 numbers"),
     }),
+
     validateOnChange: false,
   });
 
   return (
     <Register
-    showPassword={showPassword}
-    handleClickShowPassword ={handleClickShowPassword }
-    handleMouseDownPassword ={handleMouseDownPassword }
+      showPassword={showPassword}
+      handleClickShowPassword={handleClickShowPassword}
+      handleMouseDownPassword={handleMouseDownPassword}
       values={values}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
