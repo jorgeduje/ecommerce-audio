@@ -1,8 +1,3 @@
-.registerContainer {
-    background-color: #F2F2F2;
-    padding: 10rem;
-}
-
 .gridContainer {
     display: flex;
     flex-direction: column !important;
@@ -25,7 +20,7 @@
     line-height: 25px;
     letter-spacing: 0.93px;
     color: #D87D4A;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
 }
 
 .gridContainer .gridRow {
@@ -47,4 +42,10 @@
     font-size: 12px;
     line-height: 16.39px;
     letter-spacing: -0.21px;
+}
+
+.gridContainer .btn {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem 0;
 }

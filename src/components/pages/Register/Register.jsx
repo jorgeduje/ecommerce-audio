@@ -1,9 +1,8 @@
 import { useState } from "react";
 import {
   Grid,
-  TextField,
-  Typography,
   OutlinedInput,
+  Typography,
   InputAdornment,
   IconButton,
 } from "@mui/material";
@@ -12,6 +11,10 @@ import { Box } from "@mui/system";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Button } from "@mui/base";
+import {
+  CssTextField,
+  CssTextFieldPassword,
+} from "../../Custom/CustomComponents";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,9 +26,7 @@ const Register = () => {
   };
 
   return (
-
-    
-    <Box className={styles.registerContainer}>
+    <Box sx={{ backgroundColor: "primary.third", padding: "10rem" }}>
       <Grid
         container
         component="form"
@@ -41,17 +42,21 @@ const Register = () => {
         <Grid item lg={12} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="name">Name</label>
-            <TextField required id="outlined-required" placeholder="Pepito" />
+            <CssTextField
+              required
+              id="outlined-required"
+              placeholder="Pepito"
+            />
           </Box>
           <Box className={styles.inputContainer}>
             <label htmlFor="Last Name">Last Name</label>
-            <TextField required id="outlined-required" placeholder="Smith" />
+            <CssTextField required id="outlined-required" placeholder="Smith" />
           </Box>
         </Grid>
         <Grid item lg={6} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="phone">Phone Number</label>
-            <TextField
+            <CssTextField
               required
               id="outlined-required"
               placeholder="333478633"
@@ -64,37 +69,66 @@ const Register = () => {
         <Grid item lg={12} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="email">Email</label>
-            <TextField
+            <CssTextField
               required
               id="outlined-required"
               placeholder="pepito@gmail.com"
             />
           </Box>
+        </Grid>
+        <Grid lg={12} className={styles.gridRow} sx={{marginTop:'1rem'}}>
           <Box className={styles.inputContainer}>
             <label htmlFor="password">Password </label>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={showPassword ? "text" : "password"}
-              placeholder="*****"
-              required
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Password"
-            />
+            <CssTextFieldPassword>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                placeholder="*****"
+                required
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </CssTextFieldPassword>
+          </Box>
+
+          <Box className={styles.inputContainer}>
+            <label htmlFor="password">Password </label>
+            <CssTextFieldPassword>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                placeholder="*****"
+                required
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </CssTextFieldPassword>
           </Box>
         </Grid>
-        <Grid lg={12}>
-          <Button>Send</Button>
+        <Grid lg={12} className={styles.gridRow}>
+          <Button className={styles.btn}>Send</Button>
         </Grid>
       </Grid>
     </Box>
