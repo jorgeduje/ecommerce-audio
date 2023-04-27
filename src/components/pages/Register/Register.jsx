@@ -23,6 +23,8 @@ const Register = () => {
   };
 
   return (
+
+    
     <Box className={styles.registerContainer}>
       <Grid
         container
