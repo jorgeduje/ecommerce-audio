@@ -15,10 +15,20 @@
     letter-spacing: 2px;
     line-height: 25px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
-a {
+.itemLink {
     text-decoration: none;
-    margin-left: 1rem
+    margin: 1rem 2rem 0;
+    color: #fff;
+}
+
+a:hover {
+    color: #d87d4a;
+}
+
+.linksBox {
+    display: flex;
+    flex-direction: column;
 }
