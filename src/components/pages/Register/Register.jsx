@@ -10,8 +10,8 @@ import styles from "./Register.module.css";
 import { Box } from "@mui/system";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { Button } from "@mui/base";
 import {
+  ButtonCustom,
   CssTextField,
   CssTextFieldPassword,
 } from "../../Custom/CustomComponents";
@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "primary.third", padding: "10rem" }}>
+    <Box sx={{ backgroundColor: "primary.third"}} className={styles.registerContainer}>
       <Grid
         container
         component="form"
@@ -44,7 +44,7 @@ const Register = () => {
             <label htmlFor="name">Name</label>
             <CssTextField
               required
-              id="outlined-required"
+              id="outlined-required 1"
               placeholder="Pepito"
             />
           </Box>
@@ -53,12 +53,12 @@ const Register = () => {
             <CssTextField required id="outlined-required" placeholder="Smith" />
           </Box>
         </Grid>
-        <Grid item lg={6} className={styles.gridRow}>
+        <Grid item lg={6} md={12} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="phone">Phone Number</label>
             <CssTextField
               required
-              id="outlined-required"
+              id="outlined-required 2"
               placeholder="333478633"
             />
           </Box>
@@ -71,17 +71,17 @@ const Register = () => {
             <label htmlFor="email">Email</label>
             <CssTextField
               required
-              id="outlined-required"
+              id="outlined-required 3"
               placeholder="pepito@gmail.com"
             />
           </Box>
         </Grid>
-        <Grid lg={12} className={styles.gridRow} sx={{marginTop:'1rem'}}>
+        <Grid  item lg={12} className={styles.gridRow} sx={{marginTop:'1rem'}}>
           <Box className={styles.inputContainer}>
             <label htmlFor="password">Password </label>
             <CssTextFieldPassword>
               <OutlinedInput
-                id="outlined-adornment-password"
+                id="outlined-adornment-password 1"
                 type={showPassword ? "text" : "password"}
                 placeholder="*****"
                 required
@@ -103,7 +103,7 @@ const Register = () => {
           </Box>
 
           <Box className={styles.inputContainer}>
-            <label htmlFor="password">Password </label>
+            <label htmlFor="confirmPassword">Confirm Password </label>
             <CssTextFieldPassword>
               <OutlinedInput
                 id="outlined-adornment-password"
@@ -127,8 +127,8 @@ const Register = () => {
             </CssTextFieldPassword>
           </Box>
         </Grid>
-        <Grid lg={12} className={styles.gridRow}>
-          <Button className={styles.btn}>Send</Button>
+        <Grid item lg={12} >
+          <ButtonCustom className={styles.btn}>Send</ButtonCustom>
         </Grid>
       </Grid>
     </Box>
