@@ -2,6 +2,7 @@ import { Typography, Button, Box } from "@mui/material";
 import './home.css'
 
 const Home = () => {
+
   return (
     <Box
       sx={{
