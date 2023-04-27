@@ -6,7 +6,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import styles from './Menu.module.css'
+import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
 
 const menu = [
@@ -16,11 +16,14 @@ const menu = [
   { id: 4, title: "earphones", path: "/" },
 ];
 
-const Menu = ({ state, toggleDrawer}) => {
- 
+const Menu = ({ state, toggleDrawer }) => {
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        backgroundColor: "primary.second",
+        height: "100%",
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -28,19 +31,43 @@ const Menu = ({ state, toggleDrawer}) => {
       <List>
         {menu.map((text) => (
           <ListItem key={text.id} disablePadding>
-            <Link to={text.path} >
+            <Link to={text.path} className={styles.itemLink}>
               <ListItemText primary={text.title} key={text.id} />
-              </Link>
+            </Link>
           </ListItem>
         ))}
       </List>
+      <hr style={{ color: "secondary.second", margin: "1.5rem 1rem" }} />
+      <Box className={styles.linksBox}>
+        <Link
+          to="/login"
+          style={{
+            color: "#d87d4a",
+            textDecoration: "none",
+            margin: "1rem 2rem 0",
+          }}
+        >
+          {" "}
+          SignIn{" "}
+        </Link>
+        <Link
+          to="/register"
+          style={{
+            color: "#d87d4a",
+            textDecoration: "none",
+            margin: "1rem 2rem 0",
+          }}
+        >
+          LogIn
+        </Link>
+      </Box>
     </Box>
   );
   return (
     <div>
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}  className={styles.menu}>
+          <Button onClick={toggleDrawer(anchor, true)} className={styles.menu}>
             <MenuIcon />
           </Button>
           <SwipeableDrawer

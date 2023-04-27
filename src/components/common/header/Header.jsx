@@ -72,16 +72,23 @@ const Header = () => {
               );
             })}
           </Box>
-          <IconButton
-            className={styles.cartIcon}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ padding: "0" }}
-          >
-            <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
-          </IconButton>
+          <Box className={styles.usersContainer}>
+            <Box className={styles.loginBox}>
+              <Link to='/login' className={styles.linkSign}> SignIn </Link>
+              <hr/>
+              <Link to='/register' className={styles.linkSign}>LogIn</Link>
+            </Box>
+            <IconButton
+              className={styles.cartIcon}
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ padding: "0" }}
+            >
+              <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { useFormik } from "formik";
 import Register from "./Register";
 
 import * as Yup from "yup";
 
 const RegisterContainer = () => {
+const [showPassword, setShowPassword] = useState(false);
 
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   const { values, handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
@@ -43,6 +50,9 @@ const RegisterContainer = () => {
 
   return (
     <Register
+    showPassword={showPassword}
+    handleClickShowPassword ={handleClickShowPassword }
+    handleMouseDownPassword ={handleMouseDownPassword }
       values={values}
       handleChange={handleChange}
       handleSubmit={handleSubmit}

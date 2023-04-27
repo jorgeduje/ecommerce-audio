@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Grid,
   OutlinedInput,
@@ -16,15 +15,15 @@ import {
   CssTextFieldPassword,
 } from "../../Custom/CustomComponents";
 
-const Register = ({ values, handleChange, handleSubmit, errors }) => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
+const Register = ({
+  values,
+  handleChange,
+  handleSubmit,
+  errors,
+  showPassword,
+  handleClickShowPassword,
+  handleMouseDownPassword,
+}) => {
   return (
     <Box
       sx={{ backgroundColor: "primary.third" }}
