@@ -16,7 +16,7 @@ import {
   CssTextFieldPassword,
 } from "../../Custom/CustomComponents";
 
-const Register = () => {
+const Register = ({ values, handleChange, handleSubmit, errors }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -26,10 +26,14 @@ const Register = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "primary.third"}} className={styles.registerContainer}>
+    <Box
+      sx={{ backgroundColor: "primary.third" }}
+      className={styles.registerContainer}
+    >
       <Grid
         container
         component="form"
+        onSubmit={handleSubmit}
         rowSpacing={2}
         className={styles.gridContainer}
       >
@@ -43,24 +47,30 @@ const Register = () => {
           <Box className={styles.inputContainer}>
             <label htmlFor="name">Name</label>
             <CssTextField
-              required
               id="outlined-required 1"
               placeholder="Pepito"
+              name="name"
+              onChange={handleChange}
+              error={errors.name ? true : false}
+              helperText={errors.name}
             />
           </Box>
           <Box className={styles.inputContainer}>
             <label htmlFor="Last Name">Last Name</label>
-            <CssTextField required id="outlined-required" placeholder="Smith" />
+            <CssTextField
+              id="outlined-required"
+              placeholder="Smith"
+              name="lastName"
+              onChange={handleChange}
+              error={errors.lastName ? true : false}
+              helperText={errors.lastName}
+            />
           </Box>
         </Grid>
         <Grid item lg={6} md={12} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="phone">Phone Number</label>
-            <CssTextField
-              required
-              id="outlined-required 2"
-              placeholder="333478633"
-            />
+            <CssTextField id="outlined-required 2" placeholder="333478633" />
           </Box>
         </Grid>
         <Typography variant="h2" className={styles.h2}>
@@ -70,13 +80,21 @@ const Register = () => {
           <Box className={styles.inputContainer}>
             <label htmlFor="email">Email</label>
             <CssTextField
-              required
               id="outlined-required 3"
               placeholder="pepito@gmail.com"
+              name="email"
+              onChange={handleChange}
+              error={errors.email ? true : false}
+              helperText={errors.email}
             />
           </Box>
         </Grid>
-        <Grid  item lg={12} className={styles.gridRow} sx={{marginTop:'1rem'}}>
+        <Grid
+          item
+          lg={12}
+          className={styles.gridRow}
+          sx={{ marginTop: "1rem" }}
+        >
           <Box className={styles.inputContainer}>
             <label htmlFor="password">Password </label>
             <CssTextFieldPassword>
@@ -84,7 +102,9 @@ const Register = () => {
                 id="outlined-adornment-password 1"
                 type={showPassword ? "text" : "password"}
                 placeholder="*****"
-                required
+                name="password"
+                onChange={handleChange}
+                error={errors.password ? true : false}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -97,8 +117,20 @@ const Register = () => {
                     </IconButton>
                   </InputAdornment>
                 }
+                // helperText={errors.password}
                 label="Password"
               />
+              {errors.password && (
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#d32f2f",
+                    marginLeft: "14px",
+                  }}
+                >
+                  {errors.password}
+                </span>
+              )}
             </CssTextFieldPassword>
           </Box>
 
@@ -109,7 +141,9 @@ const Register = () => {
                 id="outlined-adornment-password"
                 type={showPassword ? "text" : "password"}
                 placeholder="*****"
-                required
+                name="confirmPassword"
+                onChange={handleChange}
+                error={errors.confirmPassword ? true : false}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -124,11 +158,24 @@ const Register = () => {
                 }
                 label="Password"
               />
+              {errors.confirmPassword && (
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#d32f2f",
+                    marginLeft: "14px",
+                  }}
+                >
+                  {errors.confirmPassword}
+                </span>
+              )}
             </CssTextFieldPassword>
           </Box>
         </Grid>
-        <Grid item lg={12} >
-          <ButtonCustom className={styles.btn}>Send</ButtonCustom>
+        <Grid item lg={12}>
+          <ButtonCustom type="submit" className={styles.btn}>
+            Send
+          </ButtonCustom>
         </Grid>
       </Grid>
     </Box>
