@@ -1,0 +1,67 @@
+.registerContainer {
+    padding: 10rem;
+}
+
+.gridContainer {
+    display: flex;
+    flex-direction: column !important;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.gridContainer .register {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    margin-bottom: 1rem;
+}
+
+.gridContainer .h2 {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.93px;
+    color: #d87d4a;
+    margin: 2rem 0 1rem;
+}
+
+.gridContainer .gridRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.gridContainer .gridRow .inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.gridContainer .gridRow .inputContainer label {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16.39px;
+    letter-spacing: -0.21px;
+}
+
+.gridContainer .btn {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 900px) {
+    .gridContainer .gridRow {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:600px) {
+    .registerContainer {
+        padding: 2.5rem;
+    }
+}

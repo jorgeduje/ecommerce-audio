@@ -1,7 +1,6 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import styles from "./Header.module.css";
@@ -10,7 +9,12 @@ import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
-const menu = [{title: "home", path:"/"}];
+const menu = [
+  { id: 1, title: "home", path: "/" },
+  { id: 2, title: "headphones", path: "/" },
+  { id: 3, title: "speakers", path: "/" },
+  { id: 4, title: "earphones", path: "/" },
+];
 
 const Header = () => {
   const size = useWindowSize(null);
@@ -58,8 +62,7 @@ const Header = () => {
             {menu.map((item) => {
               return (
                 <Link
-                  key={item.title}
-                 
+                  key={item.id}
                   sx={{ flexGrow: 1 }}
                   className={styles.item}
                   to={item.path}
