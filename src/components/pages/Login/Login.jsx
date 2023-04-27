@@ -1,14 +1,15 @@
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 import React from "react";
 import {
+  ButtonCustom,
   CssTextField,
   CssTextFieldPassword,
+  LinkGoBack,
 } from "../../Custom/CustomComponents";
 import "./Login.css";
 import {
   Box,
-  Button,
   IconButton,
   InputAdornment,
   OutlinedInput,
@@ -21,6 +22,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 const Login = () => {
   // const dispatch = useDispatch();
   const [showPassword, setShowPassword] = React.useState(false);
+  const navigate = useNavigate()
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -50,30 +52,10 @@ const Login = () => {
             sm: "80%",
             md: "600px",
           },
+          marginBottom: "28px"
         }}
       >
-        <Button
-          className="volverHome"
-          sx={{
-            textDecoration: "none",
-            color: "secondary.third",
-            opacity: "0.5",
-            marginBottom: "28px",
-            backgroundColor: "primary.third",
-            outline: "0",
-            textAlign: "start",
-            border: "0",
-            padding: "0",
-            display: "flex",
-            justifyContent: "flex-start",
-            cursor: "pointer",
-            transition: "none",
-            webkitTransition: "none",
-            textTransform: "none",
-          }}
-        >
-          Go Back
-        </Button>
+        <LinkGoBack onClick={()=>navigate(-1)}>Go Back</LinkGoBack>
       </Box>
       <Box
         sx={{
@@ -154,7 +136,7 @@ const Login = () => {
               </Typography>
               <CssTextFieldPassword>
                 <OutlinedInput
-                placeholder="2134"
+                  placeholder="2134"
                   type={showPassword ? "text" : "password"}
                   endAdornment={
                     <InputAdornment position="end">
@@ -164,7 +146,11 @@ const Login = () => {
                         onMouseDown={handleMouseDownPassword}
                         edge="end"
                       >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                        {showPassword ? (
+                          <VisibilityOff color="primary" />
+                        ) : (
+                          <Visibility color="primary" />
+                        )}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -172,7 +158,7 @@ const Login = () => {
               </CssTextFieldPassword>
             </Box>
           </Box>
-          <button className="botonLogin">Continue</button>
+          <ButtonCustom sx={{ width: {xs: "100%" , sm: "284px"}}}>Continue</ButtonCustom>
         </form>
       </Box>
       {/* <Button

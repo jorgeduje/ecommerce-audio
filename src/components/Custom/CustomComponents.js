@@ -1,14 +1,41 @@
-import { Button, FormControl, TextField } from "@mui/material";
+import { Button, FormControl, Link, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const ButtonCustom = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  color: "white",
-  padding: "10px 20px",
+//Link
+
+export const LinkGoBack = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  opacity: "0.5",
+  cursor: "pointer",
   "&:hover": {
-    backgroundColor: "blue",
+    color: theme.palette.primary.main,
+    opacity: "1",
   },
 }));
+
+//Button
+
+export const ButtonCustom = styled(Button)(({ theme }) => ({
+  width: "284px",
+  height: "48px",
+  backgroundColor: theme.palette.primary.main,
+  border: "none",
+  borderRadius: "0",
+  color: theme.palette.secondary.second,
+  fontFamily: "'Manrope'",
+  fontWeight: "700",
+  fontSize: "13px",
+  lineHeight: "18px",
+  textAlign: "center",
+  letterSpacing: "1px",
+  textTransform: "uppercase",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: theme.palette.secondary.main,
+  },
+}));
+
+//TextField
 
 export const CssTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
