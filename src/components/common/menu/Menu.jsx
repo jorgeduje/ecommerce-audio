@@ -4,12 +4,17 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from './Menu.module.css'
+import { Link } from "react-router-dom";
 
-const menu = ["home", "headphones", "speakers", "earphones"];
+const menu = [
+  { id: 1, title: "home", path: "/" },
+  { id: 2, title: "headphones", path: "/" },
+  { id: 3, title: "speakers", path: "/" },
+  { id: 4, title: "earphones", path: "/" },
+];
 
 const Menu = ({ state, toggleDrawer}) => {
  
@@ -21,11 +26,11 @@ const Menu = ({ state, toggleDrawer}) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {menu.map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} key={index} />
-            </ListItemButton>
+        {menu.map((text) => (
+          <ListItem key={text.id} disablePadding>
+            <Link to={text.path} >
+              <ListItemText primary={text.title} key={text.id} />
+              </Link>
           </ListItem>
         ))}
       </List>

@@ -14,4 +14,11 @@
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 25px;
+    text-decoration: none;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 1rem
 }

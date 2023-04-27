@@ -1,3 +1,7 @@
+.registerContainer {
+    padding: 10rem;
+}
+
 .gridContainer {
     display: flex;
     flex-direction: column !important;
@@ -19,7 +23,7 @@
     font-size: 13px;
     line-height: 25px;
     letter-spacing: 0.93px;
-    color: #D87D4A;
+    color: #d87d4a;
     margin: 2rem 0 1rem;
 }
 
@@ -48,4 +52,16 @@
     width: 100%;
     margin-top: 3rem;
     padding: 1rem 0;
+}
+
+@media (max-width: 900px) {
+    .gridContainer .gridRow {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:600px) {
+    .registerContainer {
+        padding: 2.5rem;
+    }
 }
