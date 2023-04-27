@@ -69,7 +69,15 @@ const Register = ({
         <Grid item lg={6} md={12} className={styles.gridRow}>
           <Box className={styles.inputContainer}>
             <label htmlFor="phone">Phone Number</label>
-            <CssTextField id="outlined-required 2" placeholder="333478633" />
+            <CssTextField
+              id="outlined-required 2"
+              placeholder="333478633"
+              onChange={handleChange}
+              name="phone"
+              error={errors.phone ? true : false}
+              helperText={errors.phone}
+              type="number"
+            />
           </Box>
         </Grid>
         <Typography variant="h2" className={styles.h2}>
@@ -172,7 +180,7 @@ const Register = ({
           </Box>
         </Grid>
         <Grid item lg={12}>
-          <ButtonCustom type="submit" className={styles.btn}>
+          <ButtonCustom type="submit" className={styles.btn} onClick={console.log(values)}> 
             Send
           </ButtonCustom>
         </Grid>
