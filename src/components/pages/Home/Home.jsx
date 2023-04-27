@@ -1,4 +1,6 @@
 import { Typography, Button, Box } from "@mui/material";
+import './home.css'
+
 const Home = () => {
   return (
     <Box
@@ -18,18 +20,18 @@ const Home = () => {
         textAlign: "center",
       }}
     >
-      <Box sx={{ width: { xs: "80%", md: "40%" } }}>
-        <Typography variant="subtitle1" color="primary.third">
+      <Box sx={{ width: { xs: "80%", md: "40%" } }} className="titleBox">
+        <Typography variant="subtitle1" color="primary.third" className="subtitle1">
           NEW PRODUCT
         </Typography>
-        <Typography variant="h2" color="primary.fourth">
+        <Typography variant="h2" color="primary.fourth" className="h2Home">
           XX99 Mark II Headphones
         </Typography>
-        <Typography paragraph={true} color="primary.third">
+        <Typography variant="body2" color="primary.third" className="body2">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Typography>
-        <Button variant="contained" sx={{ borderRadius: "0px" }}>
+        <Button variant="contained" sx={{ borderRadius: "0px" }} className="seeProduct">
           SEE PRODUCT
         </Button>
       </Box>
@@ -37,7 +39,6 @@ const Home = () => {
       <Box
         sx={{
           display: { xs: "none", md: "block" },
-          // height: "60vh",
           width: "60%",
         }}
       >
