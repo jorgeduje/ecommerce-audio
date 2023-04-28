@@ -29,8 +29,8 @@
     color: #fff;
 }
 
-a:hover {
-    color: #d87d4a;
+.itemLink span:hover {
+    color: #d87d4a !important;
 }
 
 .linksBox {
