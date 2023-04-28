@@ -1,3 +1,8 @@
+.menu {
+    padding: 0 !important;
+    min-width: 24px !important;
+}
+
 .menu svg {
     display: block;
     color: #FFFFFF;
@@ -14,4 +19,21 @@
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 25px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.itemLink {
+    text-decoration: none;
+    margin: 1rem 2rem 0;
+    color: #fff;
+}
+
+a:hover {
+    color: #d87d4a;
+}
+
+.linksBox {
+    display: flex;
+    flex-direction: column;
 }

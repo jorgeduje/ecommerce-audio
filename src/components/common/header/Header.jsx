@@ -33,7 +33,7 @@ const Header = () => {
             <>
               <MenuContainer />
               <img
-                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svgg"
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
               />{" "}
@@ -72,16 +72,23 @@ const Header = () => {
               );
             })}
           </Box>
-          <IconButton
-            className={styles.cartIcon}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ padding: "0" }}
-          >
-            <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
-          </IconButton>
+          <Box className={styles.usersContainer}>
+            <Box className={styles.loginBox}>
+              <Link to='/register' className={styles.linkSign}> SignIn </Link>
+              <hr/>
+              <Link to='/login'  className={styles.linkSign}>LogIn</Link>
+            </Box>
+            <IconButton
+              className={styles.cartIcon}
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ padding: "0" }}
+            >
+              <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
