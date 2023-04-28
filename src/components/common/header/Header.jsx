@@ -74,9 +74,9 @@ const Header = () => {
           </Box>
           <Box className={styles.usersContainer}>
             <Box className={styles.loginBox}>
-              <Link to='/login' className={styles.linkSign}> SignIn </Link>
+              <Link to='/register' className={styles.linkSign}> SignIn </Link>
               <hr/>
-              <Link to='/register' className={styles.linkSign}>LogIn</Link>
+              <Link to='/login'  className={styles.linkSign}>LogIn</Link>
             </Box>
             <IconButton
               className={styles.cartIcon}
