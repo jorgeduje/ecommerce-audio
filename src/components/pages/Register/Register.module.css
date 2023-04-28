@@ -1,5 +1,7 @@
 .registerContainer {
-    padding: 10rem;
+    padding: 5rem 10rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .gridContainer {
@@ -8,6 +10,7 @@
     background-color: #fff;
     padding: 3rem;
     border-radius: 8px;
+    /* margin: 10rem; */
 }
 
 .gridContainer .register {
@@ -60,8 +63,14 @@
     }
 }
 
+@media (max-width:900px) {
+    .registerContainer {
+        padding: 5rem 2.5rem;
+    }
+}
+
 @media (max-width:600px) {
     .registerContainer {
-        padding: 2.5rem;
+        padding: 5rem 1.5rem;
     }
 }
