@@ -14,6 +14,7 @@ import {
   CssTextField,
   CssTextFieldPassword,
 } from "../../Custom/CustomComponents";
+import { LinkGoBack } from "../../Custom/CustomComponents";
 
 const Register = ({
   values,
@@ -23,12 +24,14 @@ const Register = ({
   showPassword,
   handleClickShowPassword,
   handleMouseDownPassword,
+  navigate
 }) => {
   return (
     <Box
       sx={{ backgroundColor: "primary.third" }}
       className={styles.registerContainer}
     >
+      <LinkGoBack onClick={()=>navigate(-1)} style={{padding:'0 0 4rem 0'}}>Go Back</LinkGoBack>
       <Grid
         container
         component="form"

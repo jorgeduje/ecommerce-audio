@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import Register from "./Register";
+import { useNavigate } from "react-router";
 
 import * as Yup from "yup";
 
@@ -61,7 +62,7 @@ const RegisterContainer = () => {
 
     validateOnChange: false,
   });
-
+  const navigate = useNavigate();
   return (
     <Register
       showPassword={showPassword}
@@ -71,6 +72,7 @@ const RegisterContainer = () => {
       handleChange={handleChange}
       handleSubmit={handleSubmit}
       errors={errors}
+      navigate={navigate}
     />
   );
 };
