@@ -60,8 +60,14 @@
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:900px) {
     .registerContainer {
         padding: 2.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .registerContainer {
+        padding: 1.5rem;
     }
 }
