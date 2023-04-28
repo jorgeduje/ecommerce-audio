@@ -40,7 +40,7 @@ const Menu = ({ state, toggleDrawer }) => {
       <hr style={{ color: "secondary.second", margin: "1.5rem 1rem" }} />
       <Box className={styles.linksBox}>
         <Link
-          to="/login"
+          to="/register"
           style={{
             color: "#d87d4a",
             textDecoration: "none",
@@ -51,7 +51,7 @@ const Menu = ({ state, toggleDrawer }) => {
           Signin{" "}
         </Link>
         <Link
-          to="/register"
+          to="/login"
           style={{
             color: "#d87d4a",
             textDecoration: "none",

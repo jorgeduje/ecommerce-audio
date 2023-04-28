@@ -120,7 +120,7 @@ const Register = ({
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <VisibilityOff  color="primary"/> : <Visibility  color="primary"/>}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -159,7 +159,7 @@ const Register = ({
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <VisibilityOff  color="primary"/> : <Visibility  color="primary"/>}
                     </IconButton>
                   </InputAdornment>
                 }

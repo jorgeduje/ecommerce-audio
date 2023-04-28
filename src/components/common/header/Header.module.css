@@ -69,10 +69,13 @@
     color: #FBAF85;
 }
 
-@media (max-width: 900px) {
+@media (max-width:1100px) {
     .navBarContainer {
         padding: 0 2.5rem;
     }
+}
+
+@media (max-width: 900px) {
     .bar .menu {
         display: block;
         color: #ffffff;
