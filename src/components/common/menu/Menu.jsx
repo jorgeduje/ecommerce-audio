@@ -48,7 +48,7 @@ const Menu = ({ state, toggleDrawer }) => {
           }}
         >
           {" "}
-          SignIn{" "}
+          Signin{" "}
         </Link>
         <Link
           to="/login"
@@ -58,7 +58,7 @@ const Menu = ({ state, toggleDrawer }) => {
             margin: "1rem 2rem 0",
           }}
         >
-          LogIn
+          Login
         </Link>
       </Box>
     </Box>
@@ -66,9 +66,9 @@ const Menu = ({ state, toggleDrawer }) => {
   return (
     <div>
       {["left"].map((anchor) => (
-        <React.Fragment key={anchor}>
+        <React.Fragment key={anchor} >
           <Button onClick={toggleDrawer(anchor, true)} className={styles.menu}>
-            <MenuIcon />
+            <MenuIcon sx={{padding:"0"}}/>
           </Button>
           <SwipeableDrawer
             anchor={anchor}
