@@ -1,6 +1,3 @@
-import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-import React from "react";
 import {
   ButtonCustom,
   CssTextField,
@@ -19,16 +16,17 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 // import { login } from "../../../store/auth/authSlice";
 
-const Login = () => {
+const Login = ({
+  showPassword,
+  navigate,
+  handleClickShowPassword,
+  handleMouseDownPassword,
+  values,
+  handleChange,
+  handleSubmit,
+  errors,
+}) => {
   // const dispatch = useDispatch();
-  const [showPassword, setShowPassword] = React.useState(false);
-  const navigate = useNavigate()
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
 
   return (
     <Box
@@ -52,10 +50,10 @@ const Login = () => {
             sm: "80%",
             md: "600px",
           },
-          marginBottom: "28px"
+          marginBottom: "28px",
         }}
       >
-        <LinkGoBack onClick={()=>navigate(-1)}>Go Back</LinkGoBack>
+        <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
       </Box>
       <Box
         sx={{
@@ -67,7 +65,7 @@ const Login = () => {
           height: "500px",
         }}
       >
-        <form className="cajaLogin">
+        <form className="cajaLogin" onSubmit={handleSubmit}>
           <Typography
             variant="h1"
             color="secondary.third"
@@ -111,7 +109,13 @@ const Login = () => {
               >
                 Email Address
               </Typography>
-              <CssTextField type="email" placeholder="alexei@mail.com" />
+              <CssTextField
+                placeholder="alexei@mail.com"
+                name="email"
+                onChange={handleChange}
+                // error={errors.email ? true : false}
+                // helperText={errors.email}
+              />
             </Box>
             <Box
               className="cajaPassLogin"
@@ -138,6 +142,9 @@ const Login = () => {
                 <OutlinedInput
                   placeholder="2134"
                   type={showPassword ? "text" : "password"}
+                  name="password"
+                  onChange={handleChange}
+                  // error={errors.password ? true : false}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
@@ -155,10 +162,23 @@ const Login = () => {
                     </InputAdornment>
                   }
                 />
+                {/* {errors.password && (
+                  <span
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "#d32f2f",
+                      marginLeft: "14px",
+                    }}
+                  >
+                    {errors.password}
+                  </span>
+                )} */}
               </CssTextFieldPassword>
             </Box>
           </Box>
-          <ButtonCustom sx={{ width: {xs: "100%" , sm: "284px"}}}>Continue</ButtonCustom>
+          <ButtonCustom sx={{ width: { xs: "100%", sm: "284px" } }} type="submit">
+            Continue
+          </ButtonCustom>
         </form>
       </Box>
       {/* <Button

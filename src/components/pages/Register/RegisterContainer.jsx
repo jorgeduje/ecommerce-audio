@@ -4,8 +4,6 @@ import Register from "./Register";
 import * as Yup from "yup";
 
 const RegisterContainer = () => {
-
-
   const { values, handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       name: "",
