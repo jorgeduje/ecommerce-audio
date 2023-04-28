@@ -69,9 +69,7 @@
     color: #FBAF85;
 }
 
-@media (max-width:1150px) {}
-
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .navBarContainer {
         padding: 0 2.5rem;
     }
@@ -83,5 +81,11 @@
     .bar .items,
     .usersContainer .loginBox {
         display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .navBarContainer {
+        padding: 0 1.5rem;
     }
 }

@@ -92,6 +92,9 @@
 }
 
 @media (max-width:600px) {
+    .footerContainer {
+        padding: 3.7rem 1.5rem;
+    }
     .footerContainer .bar {
         align-items: center !important;
         gap: 3rem;
