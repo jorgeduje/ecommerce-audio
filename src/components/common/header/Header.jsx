@@ -33,7 +33,7 @@ const Header = () => {
             <>
               <MenuContainer />
               <img
-                src="src/assets/audio.png"
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svgg"
                 alt="title"
                 className={styles.name}
               />{" "}
@@ -51,7 +51,7 @@ const Header = () => {
                 <MenuIcon />
               </IconButton>
               <img
-                src="src/assets/audio.png"
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
               />
