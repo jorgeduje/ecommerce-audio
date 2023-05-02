@@ -1,5 +1,5 @@
 import Home from "../components/pages/Home/Home";
-import Login from "../components/pages/Login/Login";
+import LoginContainer from "../components/pages/Login/LoginContainer";
 import RegisterContainer from "../components/pages/Register/RegisterContainer";
 import CategoryContainer from "../components/pages/Category/CategoryContainer";
 
@@ -11,7 +11,7 @@ export const menuRouter = [{
     {
         id: "login",
         path: "/login",
-        Element: Login
+        Element: LoginContainer
     },
     {
         id: "register",
