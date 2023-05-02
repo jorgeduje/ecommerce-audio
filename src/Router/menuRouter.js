@@ -19,7 +19,7 @@ export const menuRouter = [{
     },
     {
         id: "category",
-        path: "/category/:id",
+        path: "/category/:categoryName",
         Element: Home
     }
 ]

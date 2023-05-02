@@ -3,7 +3,7 @@ import ProductsList from "../ProductsList/ProductsList";
 import { useParams } from "react-router";
 const Home = () => {
 
-  const { id } = useParams()
+  const { categoryName } = useParams()
 
   return (
     <div>
@@ -54,7 +54,7 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <ProductsList id={id} />
+      <ProductsList categoryName={categoryName} />
     </div>
   );
 };
