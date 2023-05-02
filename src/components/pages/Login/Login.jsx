@@ -27,7 +27,6 @@ const Login = ({
   errors,
 }) => {
   // const dispatch = useDispatch();
-
   return (
     <Box
       sx={{
@@ -113,8 +112,8 @@ const Login = ({
                 placeholder="alexei@mail.com"
                 name="email"
                 onChange={handleChange}
-                // error={errors.email ? true : false}
-                // helperText={errors.email}
+                error={errors.email ? true : false}
+                helperText={errors.email}
               />
             </Box>
             <Box
@@ -144,7 +143,7 @@ const Login = ({
                   type={showPassword ? "text" : "password"}
                   name="password"
                   onChange={handleChange}
-                  // error={errors.password ? true : false}
+                  error={errors.password ? true : false}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
@@ -162,7 +161,7 @@ const Login = ({
                     </InputAdornment>
                   }
                 />
-                {/* {errors.password && (
+                {errors.password && (
                   <span
                     style={{
                       fontSize: "0.75rem",
@@ -172,7 +171,7 @@ const Login = ({
                   >
                     {errors.password}
                   </span>
-                )} */}
+                )}
               </CssTextFieldPassword>
             </Box>
           </Box>
