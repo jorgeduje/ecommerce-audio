@@ -8,13 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
-
-const menu = [
-  { id: 1, title: "home", path: "/" },
-  { id: 2, title: "headphones", path: "/category/headphones" },
-  { id: 3, title: "speakers", path: "/category/speakers" },
-  { id: 4, title: "earphones", path: "/category/earphones" },
-];
+import { menu } from "../../../utils/utils";
 
 const Menu = ({ state, toggleDrawer }) => {
   const list = (anchor) => (

@@ -7,13 +7,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../../../hooks/useWindowSize";
+import { menu } from "../../../utils/utils";
 
-const menu = [
-  { id: 1, title: "home", path: "/" },
-  { id: 2, title: "headphones", path: "/" },
-  { id: 3, title: "speakers", path: "/" },
-  { id: 4, title: "earphones", path: "/" },
-];
 const Footer = () => {
   const size = useWindowSize();
   return (
@@ -64,10 +59,10 @@ const Footer = () => {
         ) : (
           <>
             <p className={styles.description}>
-              Audiophile is an all in one stop to fulfill your audio needs.
-              Were a small team of music lovers and sound specialists who are
-              devoted to helping you get the most out of personal audio. Come
-              and visit our demo facility - were open 7 days a week.
+              Audiophile is an all in one stop to fulfill your audio needs. Were
+              a small team of music lovers and sound specialists who are devoted
+              to helping you get the most out of personal audio. Come and visit
+              our demo facility - were open 7 days a week.
             </p>
             <Box className={styles.bottom}>
               <p className={styles.copyRights}>

@@ -8,13 +8,7 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-
-const menu = [
-  { id: 1, title: "home", path: "/" },
-  { id: 2, title: "headphones", path: "/" },
-  { id: 3, title: "speakers", path: "/" },
-  { id: 4, title: "earphones", path: "/" },
-];
+import { menu } from "../../../utils/utils";
 
 const Header = () => {
   const size = useWindowSize(null);
