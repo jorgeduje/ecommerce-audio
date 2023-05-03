@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const size = useWindowSize();
-  
+
   let id = product.id;
 
   function isPair(id) {
@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
       return false;
     }
   }
-  
+
   return (
     <>
       {!isPair(id) ? (
@@ -63,7 +63,19 @@ const ProductCard = ({ product }) => {
               alt="green iguana"
             />
           )}
-          <CardContent className={styles.infoContainer}>
+          <CardContent
+            className={styles.infoContainer}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              height: " 100%",
+              width: "50%",
+              paddingLeft: "9rem",
+              gap: " 2rem",
+            }}
+          >
             {/* new product title */}
             {/* <Typography
         variant="p"
@@ -84,9 +96,16 @@ const ProductCard = ({ product }) => {
             <Typography variant="body2" className={styles.detail}>
               {product.description}
             </Typography>
-            <Link to={`product/${product.id}`} style={{ padding: "0", marginTop: "1rem" }}>
+            <Link
+              to={`product/${product.id}`}
+              style={{ padding: "0", marginTop: "1rem" }}
+            >
               <ButtonCustom
-                style={{ width: "10rem", textTransform: "capitalize", textDecoration:"none" }}
+                style={{
+                  width: "10rem",
+                  textTransform: "capitalize",
+                  textDecoration: "none",
+                }}
               >
                 See Product
               </ButtonCustom>
@@ -133,7 +152,16 @@ const ProductCard = ({ product }) => {
               alt="green iguana"
             />
           )}
-          <CardContent className={styles.infoContainer}>
+          <CardContent className={styles.infoContainer} sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              height: " 100%",
+              width: "50%",
+              paddingRight: "9rem",
+              gap: " 2rem",
+            }}>
             {/* new product title */}
             {/* <Typography
           variant="p"
@@ -154,8 +182,11 @@ const ProductCard = ({ product }) => {
             <Typography variant="body2" className={styles.detail}>
               {product.description}
             </Typography>
-            <Link to={`product/${product.id}`} style={{ padding: "0", marginTop: "1rem" }}>
-              <ButtonCustom style={{ width: "10rem" }}>Share</ButtonCustom>
+            <Link
+              to={`product/${product.id}`}
+              style={{ padding: "0", marginTop: "1rem" }}
+            >
+              <ButtonCustom style={{ width: "10rem",  textTransform: "capitalize" }}>see product</ButtonCustom>
             </Link>
           </CardContent>
         </Card>
