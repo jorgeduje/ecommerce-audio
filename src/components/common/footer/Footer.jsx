@@ -15,7 +15,7 @@ const Footer = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className={styles.footerContainer} position="relative">
         <Toolbar className={styles.bar}>
-          <img src="src/assets/audio.png" alt="title" className={styles.name} />
+          <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" alt="title" className={styles.name} />
           <div className={styles.items}>
             {menu.map((item) => {
               return (
