@@ -1,8 +1,12 @@
 import ProductCard from './ProductCard'
+import Loading from '../loading/Loading'
 
-const ProductCardContainer = ({product}) => {
+const ProductCardContainer = ({product, index}) => {
+  if(!product){
+    return <Loading />
+  }
   return (
-    <ProductCard product={product}/>
+    <ProductCard product={product} index={index}/>
   )
 }
 

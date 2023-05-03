@@ -20,12 +20,12 @@
 
 @media (max-width: 900px) {
     .cardContainer {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column !important;
+        height: 46rem !important;
     }
     .cardContainer .imgContainer {
         height: 50%;
-        width: 100%;
+        width: auto;
     }
     .cardContainer .infoContainer {
         height: 50%;
