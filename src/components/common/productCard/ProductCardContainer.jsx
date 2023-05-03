@@ -1,8 +1,8 @@
 import ProductCard from './ProductCard'
 
-const ProductCardContainer = () => {
+const ProductCardContainer = ({product}) => {
   return (
-    <ProductCard/>
+    <ProductCard product={product}/>
   )
 }
 
