@@ -1,8 +1,8 @@
 import { Typography, Button, Box } from "@mui/material";
-import ProductsList from "../ProductsList/ProductsList";
 import { useParams } from "react-router";
+import ProductListContainer from "../ProductsList/ProductListContainer";
 const Home = () => {
-
+console.log(useParams())
   const { categoryName } = useParams()
 
   return (
@@ -54,7 +54,7 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <ProductsList categoryName={categoryName} />
+      <ProductListContainer categoryName={categoryName} />
     </div>
   );
 };
