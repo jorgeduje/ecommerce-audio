@@ -88,7 +88,7 @@ const ProductCard = ({ product, index }) => {
               {product.description}
             </Typography>
             <Link
-              to={`product/${product.id}`}
+              to={`/product/${product.id}`}
               style={{ padding: "0", marginTop: "1rem" }}
             >
               <ButtonCustom
