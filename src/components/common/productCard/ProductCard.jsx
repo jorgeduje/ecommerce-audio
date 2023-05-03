@@ -12,13 +12,13 @@ const ProductCard = ({ product }) => {
 
   let id = product.id;
 
-  function isPair(id) {
+  const isPair = (id) => {
     if (id % 2 == 0) {
       return true;
     } else {
       return false;
     }
-  }
+  };
 
   return (
     <>
@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
               className={styles.imgContainer}
               component="img"
               image={product.image.mobile}
-              alt="green iguana"
+              alt={product.name}
             />
           )}
           <CardContent
@@ -148,10 +148,12 @@ const ProductCard = ({ product }) => {
               className={styles.imgContainer}
               component="img"
               image={product.image.mobile}
-              alt="green iguana"
+              alt={product.name}
             />
           )}
-          <CardContent className={styles.infoContainer} sx={{
+          <CardContent
+            className={styles.infoContainer}
+            sx={{
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -160,7 +162,8 @@ const ProductCard = ({ product }) => {
               width: "50%",
               paddingRight: "9rem",
               gap: " 2rem",
-            }}>
+            }}
+          >
             {/* new product title */}
             {/* <Typography
           variant="p"
@@ -185,7 +188,11 @@ const ProductCard = ({ product }) => {
               to={`product/${product.id}`}
               style={{ padding: "0", marginTop: "1rem" }}
             >
-              <ButtonCustom style={{ width: "10rem",  textTransform: "capitalize" }}>see product</ButtonCustom>
+              <ButtonCustom
+                style={{ width: "10rem", textTransform: "capitalize" }}
+              >
+                see product
+              </ButtonCustom>
             </Link>
           </CardContent>
         </Card>
