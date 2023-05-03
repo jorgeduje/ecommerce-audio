@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductsList from "./ProductsList";
+import Loading from "../../common/loading/Loading";
 
 const ProductListContainer = ({ categoryName }) => {
   const [items, setItems] = useState([]);
@@ -19,6 +20,10 @@ const ProductListContainer = ({ categoryName }) => {
       }
     });
   }, [categoryName]);
+
+  if (!items) {
+    return <Loading />;
+  }
 
   return <ProductsList items={items} />;
 };

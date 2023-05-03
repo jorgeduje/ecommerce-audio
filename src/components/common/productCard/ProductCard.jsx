@@ -2,7 +2,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActions } from "@mui/material";
 import styles from "./ProductCard.module.css";
 import { ButtonCustom } from "../../Custom/CustomComponents";
 import { useWindowSize } from "../../../utils/useWindowSize";
