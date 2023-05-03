@@ -5,42 +5,137 @@ import Typography from "@mui/material/Typography";
 import { CardActions } from "@mui/material";
 import styles from "./ProductCard.module.css";
 import { ButtonCustom } from "../../Custom/CustomComponents";
-import { useWindowSize } from "../../../hooks/useWindowSize";
+import { useWindowSize } from "../../../utils/useWindowSize";
+import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const size = useWindowSize();
+  
+  let id = product.id;
 
+  function isPair(id) {
+    if (id % 2 == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
   return (
-    <Card className={styles.cardContainer}>
-        {/* desktop img */}
-      {(size.width > 900) && (
-        <CardMedia
-          className={styles.imgContainer}
-          component="img"
-          image="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637968/audiophileEcommerce/product-xx99-mark-two-headphones/desktop/image-category-page-preview_q5sfc2.jpg"
-          alt="green iguana"
-        />
-      )}
-      {/* tablet img */}
-      {(size.width > 600 && size.width < 900)&&(
-        <CardMedia
-          className={styles.imgContainer}
-          component="img"
-          image="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637970/audiophileEcommerce/product-xx99-mark-two-headphones/tablet/image-category-page-preview_yae4y7.jpg"
-          alt="green iguana"
-        />
-      )}
-      {/* mobile img */}
-      {(size.width < 600) && (
-        <CardMedia
-          className={styles.imgContainer}
-          component="img"
-          image="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637969/audiophileEcommerce/product-xx99-mark-two-headphones/mobile/image-category-page-preview_qmj2jg.jpg"
-          alt="green iguana"
-        />
-      )}
-      <CardContent className={styles.infoContainer}>
-        <Typography
+    <>
+      {!isPair(id) ? (
+        <Card
+          className={styles.cardContainer}
+          key={product.id}
+          sx={{
+            width: "100%",
+            height: "35rem",
+            display: "flex",
+            flexDirection: "row",
+            boxShadow: "none !important",
+            margin: "4rem 0",
+          }}
+        >
+          {/* desktop img */}
+          {size.width > 900 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.desktop}
+              alt="green iguana"
+            />
+          )}
+          {/* tablet img */}
+          {size.width > 600 && size.width < 900 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.tablet}
+              alt="green iguana"
+            />
+          )}
+          {/* mobile img */}
+          {size.width < 600 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.mobile}
+              alt="green iguana"
+            />
+          )}
+          <CardContent className={styles.infoContainer}>
+            {/* new product title */}
+            {/* <Typography
+        variant="p"
+        sx={{
+          color: "primary.main",
+          fontWeight: " 400",
+          fontSize: " 14px",
+          lineHeight: "19.12px",
+          letterSpacing: " 10px",
+        }}
+      >
+        NEW PRODUCT
+      </Typography>  */}
+
+            <Typography variant="h1" className={styles.productName}>
+              {product.name}
+            </Typography>
+            <Typography variant="body2" className={styles.detail}>
+              {product.description}
+            </Typography>
+            <Link to={`product/${product.id}`} style={{ padding: "0", marginTop: "1rem" }}>
+              <ButtonCustom
+                style={{ width: "10rem", textTransform: "capitalize", textDecoration:"none" }}
+              >
+                See Product
+              </ButtonCustom>
+            </Link>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card
+          className={styles.cardContainer}
+          key={product.id}
+          sx={{
+            width: "100%",
+            height: "35rem",
+            display: "flex",
+            flexDirection: "row-reverse",
+            boxShadow: "none !important",
+            margin: "4rem 0",
+          }}
+        >
+          {/* desktop img */}
+          {size.width > 900 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.desktop}
+              alt="green iguana"
+            />
+          )}
+          {/* tablet img */}
+          {size.width > 600 && size.width < 900 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.tablet}
+              alt="green iguana"
+            />
+          )}
+          {/* mobile img */}
+          {size.width < 600 && (
+            <CardMedia
+              className={styles.imgContainer}
+              component="img"
+              image={product.image.mobile}
+              alt="green iguana"
+            />
+          )}
+          <CardContent className={styles.infoContainer}>
+            {/* new product title */}
+            {/* <Typography
           variant="p"
           sx={{
             color: "primary.main",
@@ -51,22 +146,21 @@ const ProductCard = () => {
           }}
         >
           NEW PRODUCT
-        </Typography>
-        <Typography variant="h1" className={styles.productName}>
-          XX99 Mark II Headphones
-        </Typography>
-        <Typography variant="body2" className={styles.detail}>
-          The new XX99 Mark II headphones is the pinnacle of pristine audio. It
-          redefines your premium headphone experience by reproducing the
-          balanced depth and precision of studio-quality sound.
-        </Typography>
-        <CardActions sx={{ padding: "0", marginTop: "1rem" }}>
-          <ButtonCustom style={{width:'10rem'}}>
-            Share
-          </ButtonCustom>
-        </CardActions>
-      </CardContent>
-    </Card>
+        </Typography>  */}
+
+            <Typography variant="h1" className={styles.productName}>
+              {product.name}
+            </Typography>
+            <Typography variant="body2" className={styles.detail}>
+              {product.description}
+            </Typography>
+            <Link to={`product/${product.id}`} style={{ padding: "0", marginTop: "1rem" }}>
+              <ButtonCustom style={{ width: "10rem" }}>Share</ButtonCustom>
+            </Link>
+          </CardContent>
+        </Card>
+      )}
+    </>
   );
 };
 
