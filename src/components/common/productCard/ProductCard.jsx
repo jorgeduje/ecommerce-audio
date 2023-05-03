@@ -51,7 +51,7 @@ const ProductCard = ({ product, index }) => {
               className={styles.imgContainer}
               component="img"
               image={product.image.mobile}
-              alt="green iguana"
+              alt={product.name}
             />
           )}
           <CardContent
