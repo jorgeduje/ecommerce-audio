@@ -1,6 +1,7 @@
 import Home from "../components/pages/Home/Home";
 import LoginContainer from "../components/pages/Login/LoginContainer";
 import RegisterContainer from "../components/pages/Register/RegisterContainer";
+import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
 
 export const menuRouter = [{
         id: "home",
@@ -21,5 +22,11 @@ export const menuRouter = [{
         id: "category",
         path: "/category/:categoryName",
         Element: Home
-    }
+    },
+    {
+        id: "productdetail",
+        path: "/product/:id",
+        Element: ProductDetailContainer
+    },
+
 ]
