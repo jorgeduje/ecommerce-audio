@@ -4,8 +4,8 @@ import ProductCardContainer from "../../common/productCard/ProductCardContainer"
 const ProductsList = ({ items }) => {
   return (
     <div className={styles.categoryContainer}>
-      {items.map((product) => (
-        <ProductCardContainer product={product} key={product.id}/>
+      {items.map((product, i) => (
+        <ProductCardContainer product={product} key={product.id} index={i}/>
       ))}
     </div>
   );
