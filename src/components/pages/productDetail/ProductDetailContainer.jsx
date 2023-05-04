@@ -2,23 +2,25 @@
 import { useEffect, useState } from 'react';
 import ProductDetail from './ProductDetail'
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const ProductDetailContainer = () => {
 
-    const [data, setData] = useState('')
-
+    const [product, setproduct] = useState('')
+    const {id} = useParams()
+    
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get(`http://localhost:5000/products/${id}`)
         .then(res =>{
-            setData(res.data)
+            setproduct(res.data)
         })
         .catch(error => {
             console.error(error)
         })
-      }, []);
+      }, [id]);
 
   return (
-    <ProductDetail data={data}/>
+    <ProductDetail product={product}/>
   )
 }
 
