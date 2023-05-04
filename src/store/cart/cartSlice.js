@@ -15,21 +15,27 @@ export const cartSlice = createSlice({
         (elemento) => elemento.id === action.payload.id
       );
       if (exist) {
-        let newArr = state.cart.map(elemento => {
-          if(elemento.id === action.payload.id){
+        let newArr = state.cart.map((elemento) => {
+          if (elemento.id === action.payload.id) {
             return {
               ...elemento,
-              quantity: elemento.quantity + action.payload.quantity
-            }
-          }else{
-            return elemento
+              quantity: elemento.quantity + action.payload.quantity,
+            };
+          } else {
+            return elemento;
           }
-        })
-        state.cart = newArr
+        });
+        state.cart = newArr;
       } else {
         state.cart = [...state.cart, action.payload];
       }
     },
+    clearCart: (state) => {
+      state.cart = [];
+    },
+    countById: ()=> {
+      
+    }
   },
 });
 export const { addToCart } = cartSlice.actions;
