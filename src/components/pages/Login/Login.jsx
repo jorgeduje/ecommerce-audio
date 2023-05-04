@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import ContadorContainer from "../../common/contador/ContadorContainer";
 // import { login } from "../../../store/auth/authSlice";
 
 const Login = ({
@@ -179,7 +178,6 @@ const Login = ({
           <ButtonCustom sx={{ width: { xs: "100%", sm: "284px" } }} type="submit">
             Continue
           </ButtonCustom>
-          <ContadorContainer/>
         </form>
       </Box>
       {/* <Button
