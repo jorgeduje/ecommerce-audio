@@ -63,7 +63,8 @@ const ProductCard = ({ product, index }) => {
               justifyContent: "center",
               height: " 100%",
               width: "50%",
-              paddingLeft: "9rem",
+              paddingLeft: isPair ? "9rem": '0',
+              paddingRight: isPair ? '0' : '9rem',
               gap: " 2rem",
             }}
           >
