@@ -1,0 +1,40 @@
+.registerContainer {
+    background-color: #F2F2F2;
+    padding: 10rem;
+}
+
+.gridContainer {
+    display: flex;
+    flex-direction: column !important;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.gridContainer .register {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    margin-bottom: 3rem;
+}
+
+.gridContainer .h2 {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.93px;
+    color: #D87D4A;
+    margin-bottom: 1.5rem;
+}
+
+.gridContainer .gridRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.gridContainer .gridRow .inputContainer {
+    display: flex;
+    flex-direction: column;
+}
