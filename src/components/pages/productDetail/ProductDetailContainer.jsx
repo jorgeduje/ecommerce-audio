@@ -4,31 +4,44 @@ import ProductDetail from "./ProductDetail";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loading from "../../common/loading/Loading";
+import { addToCart } from "../../../store/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/products/${id}`)
       .then((res) => {
-        setTimeout(() => {
-          setProduct(res.data);
-        }, 2000);
+        setProduct(res.data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, [id]);
 
-  // if(!product){
-  //   return <h1>Cargando......</h1>
-  // }
+  const onAdd = (cantidad) => {
+    let obj = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: cantidad,
+    };
+
+    dispatch(addToCart(obj));
+  };
 
   return (
     <div>
-      { !product ? <Loading /> : <ProductDetail product={product} />}
+      {!product ? (
+        <Loading />
+      ) : (
+        <ProductDetail onAdd={onAdd} product={product} />
+      )}
     </div>
   );
 };

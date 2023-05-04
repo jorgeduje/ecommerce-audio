@@ -2,7 +2,7 @@
 import { Box, Typography, Button } from "@mui/material";
 import { ButtonCustom } from "../../Custom/CustomComponents";
 
-const Contador = ({ contador, sumar, restar, agregar }) => {
+const Contador = ({ contador, sumar, restar, onAdd }) => {
   return (
     <Box
       sx={{
@@ -49,7 +49,7 @@ const Contador = ({ contador, sumar, restar, agregar }) => {
       </Box>
       <Box>
         <ButtonCustom
-          onClick={agregar}
+          onClick={()=>onAdd(contador)}
           sx={{
             width: "160px",
           }}

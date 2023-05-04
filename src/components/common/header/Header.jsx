@@ -82,6 +82,7 @@ const navigate = useNavigate();
               color="inherit"
               aria-label="menu"
               sx={{ padding: "0" }}
+              onClick={()=>navigate("/cart")}
             >
               <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
             </IconButton>

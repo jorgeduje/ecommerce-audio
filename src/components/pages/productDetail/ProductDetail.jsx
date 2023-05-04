@@ -1,13 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import ProductCardContainer from "../../common/productCard/ProductCardContainer";
+import ContadorContainer from "../../common/contador/ContadorContainer";
 
-const ProductDetail = ({ product }) => {
+const ProductDetail = ({ product, onAdd }) => {
   return (
     <Box sx={{ dispplay: "flex", padding: "165px" }}>
+      <ProductCardContainer product={product} />
+
+      <ContadorContainer onAdd={onAdd}/>
       
-        <ProductCardContainer product={product} />
-      
-      {/* <ProductCardContainer product={product} /> */}
       <Box
         component={"section"}
         sx={{
@@ -24,10 +25,9 @@ const ProductDetail = ({ product }) => {
         </Box>
         <Box>
           <Typography variant="h2">IN THE BOX</Typography>
-          {
-            product.includes.map((item, index) => (
-              <Typography key={index}>{item.item}</Typography>
-            ))}
+          {product.includes.map((item, index) => (
+            <Typography key={index}>{item.item}</Typography>
+          ))}
         </Box>
       </Box>
     </Box>
