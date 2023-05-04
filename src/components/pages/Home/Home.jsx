@@ -103,6 +103,7 @@ const Home = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            gap: "30px"
           }}>
         {images.map((image)=><CategoryCard key={image.id} data={image}/>)}
       </Box>
