@@ -3,17 +3,6 @@
     width: 50%;
 }
 
-.cardContainer .infoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    height: 100%;
-    width: 50%;
-    padding-left: 9rem;
-    gap: 2rem;
-}
-
 .cardContainer .infoContainer .productName {
     font-weight: 700;
     font-size: 2.5rem;
@@ -31,12 +20,12 @@
 
 @media (max-width: 900px) {
     .cardContainer {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column !important;
+        height: 46rem !important;
     }
     .cardContainer .imgContainer {
         height: 50%;
-        width: 100%;
+        width: auto;
     }
     .cardContainer .infoContainer {
         height: 50%;

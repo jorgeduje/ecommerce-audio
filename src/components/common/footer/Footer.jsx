@@ -5,17 +5,23 @@ import styles from "./Footer.module.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "../../../utils/useWindowSize";
 import { menu } from "../../../utils/utils";
 
 const Footer = () => {
   const size = useWindowSize();
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className={styles.footerContainer} position="relative">
         <Toolbar className={styles.bar}>
-          <img src="src/assets/audio.png" alt="title" className={styles.name} />
+          <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" 
+          alt="title" 
+          className={styles.name} 
+          onClick={()=>navigate('/')}
+          />
           <div className={styles.items}>
             {menu.map((item) => {
               return (
