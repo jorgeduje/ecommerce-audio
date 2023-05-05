@@ -15,20 +15,28 @@ export const cartSlice = createSlice({
         (elemento) => elemento.id === action.payload.id
       );
       if (exist) {
-        let newArr = state.cart.map(elemento => {
-          if(elemento.id === action.payload.id){
+        let newArr = state.cart.map((elemento) => {
+          if (elemento.id === action.payload.id) {
             return {
               ...elemento,
-              quantity: elemento.quantity + action.payload.quantity
-            }
-          }else{
-            return elemento
+              quantity: elemento.quantity + action.payload.quantity,
+            };
+          } else {
+            return elemento;
           }
-        })
-        state.cart = newArr
+        });
+        state.cart = newArr;
       } else {
         state.cart = [...state.cart, action.payload];
       }
+    },
+    clearCart: (state) => {
+      state.cart = [];
+    },
+    countById: (state, action) => {
+      const { id } = action;
+      const producto = state.find((p) => p.id === id);
+      return producto ? producto.cantidad : 0;
     },
     total: (state) => {
       state.total = 0;
@@ -40,7 +48,6 @@ export const cartSlice = createSlice({
     }
   },
 });
-export const { addToCart } = cartSlice.actions;
-export const { total } = cartSlice.actions;
+export const { addToCart, clearCart, countById, total } = cartSlice.actions;
 
 export default cartSlice.reducer;
