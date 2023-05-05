@@ -38,8 +38,14 @@ export const cartSlice = createSlice({
       const producto = state.find((p) => p.id === id);
       return producto ? producto.cantidad : 0;
     },
+    deleteById: (state, action) => {
+      const id = action.payload;
+      // state.cart.filter((item) => item.id !== id);
+      console.log(id)
+    },
   },
 });
-export const { addToCart, clearCart, countById } = cartSlice.actions;
+export const { addToCart, clearCart, countById, deleteById } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
