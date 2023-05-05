@@ -7,7 +7,7 @@ import { ButtonCustom } from "../../Custom/CustomComponents";
 import { useWindowSize } from "../../../utils/useWindowSize";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product, index }) => {
+const ProductCard = ({ product, index, show }) => {
   const size = useWindowSize();
 
   let isPair = index % 2 === 0
@@ -88,20 +88,22 @@ const ProductCard = ({ product, index }) => {
             <Typography variant="body2" className={styles.detail}>
               {product.description}
             </Typography>
-            <Link
-              to={`/product/${product.id}`}
-              style={{ padding: "0", marginTop: "1rem" }}
+          {
+            show ? <Link
+            to={`/product/${product.id}`}
+            style={{ padding: "0", marginTop: "1rem" }}
+          >
+            <ButtonCustom
+              style={{
+                width: "10rem",
+                textTransform: "capitalize",
+                textDecoration: "none",
+              }}
             >
-              <ButtonCustom
-                style={{
-                  width: "10rem",
-                  textTransform: "capitalize",
-                  textDecoration: "none",
-                }}
-              >
-                See Product
-              </ButtonCustom>
-            </Link>
+              See Product
+            </ButtonCustom>
+          </Link> : "contador"
+          }
           </CardContent>
         </Card>
       

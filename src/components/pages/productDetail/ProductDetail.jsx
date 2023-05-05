@@ -7,7 +7,7 @@ const ProductDetail = ({ product, onAdd }) => {
 
   return (
     <Box sx={{ dispplay: "flex", padding: "165px" }}>
-      <ProductCardContainer product={product} />
+      <ProductCardContainer product={product} show={false} />
 
       <ContadorContainer onAdd={onAdd} />
 

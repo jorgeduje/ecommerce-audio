@@ -5,7 +5,7 @@ const ProductsList = ({ items }) => {
   return (
     <div className={styles.categoryContainer}>
       {items.map((product, i) => (
-        <ProductCardContainer product={product} key={product.id} index={i}/>
+        <ProductCardContainer product={product} key={product.id} index={i} show={true}/>
       ))}
     </div>
   );
