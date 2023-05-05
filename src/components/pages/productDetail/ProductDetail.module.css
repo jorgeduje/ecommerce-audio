@@ -1,0 +1,8 @@
+.featuresContainer,
+.inTheBoxContainer {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.5;
+    text-align: left;
+}

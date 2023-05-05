@@ -9,10 +9,19 @@ import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useNavigate } from "react-router-dom";
 import { menu } from "../../../utils/utils";
+import { total } from '../../../store/cart/cartSlice'
+import { useDispatch } from "react-redux";
 
 const Header = () => {
   const size = useWindowSize(null);
-const navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  function handleClick() {
+    navigate("/cart")
+    dispatch(total())
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -31,7 +40,7 @@ const navigate = useNavigate();
                 src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
-                onClick={()=>navigate('/')}
+                onClick={() => navigate('/')}
               />
             </>
           ) : (
@@ -50,7 +59,7 @@ const navigate = useNavigate();
                 src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
-                onClick={()=>navigate('/')}
+                onClick={() => navigate('/')}
               />
             </Box>
           )}
@@ -72,8 +81,8 @@ const navigate = useNavigate();
           <Box className={styles.usersContainer}>
             <Box className={styles.loginBox}>
               <Link to='/register' className={styles.linkSign}> Signin </Link>
-              <hr/>
-              <Link to='/login'  className={styles.linkSign}>Login</Link>
+              <hr />
+              <Link to='/login' className={styles.linkSign}>Login</Link>
             </Box>
             <IconButton
               className={styles.cartIcon}
@@ -82,7 +91,7 @@ const navigate = useNavigate();
               color="inherit"
               aria-label="menu"
               sx={{ padding: "0" }}
-              onClick={()=>navigate("/cart")}
+              onClick={handleClick}
             >
               <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
             </IconButton>

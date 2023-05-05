@@ -31,7 +31,6 @@ const ProductDetailContainer = () => {
       price: product.price,
       quantity: cantidad,
     };
-
     dispatch(addToCart(obj));
   };
 
