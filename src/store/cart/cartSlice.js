@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cart: [],
-  total: 0, 
-  items: 0, 
+  total: 0,
+  items: 0,
 };
 
 export const cartSlice = createSlice({
@@ -41,16 +41,16 @@ export const cartSlice = createSlice({
     total: (state) => {
       state.total = 0;
       state.items = 0;
-        state.cart.forEach(element => {
-          state.total += element.quantity * element.price 
-          state.items += element.quantity
-        });
-    }
-  },
-  deleteById: (state, action) => {
-    const id = action.payload;
-    let arrFiltrado = state.cart.filter((item) => item.id !== id);
-    state.cart = arrFiltrado;
+      state.cart.forEach((element) => {
+        state.total += element.quantity * element.price;
+        state.items += element.quantity;
+      });
+    },
+    deleteById: (state, action) => {
+      const id = action.payload;
+      let arrFiltrado = state.cart.filter((item) => item.id !== id);
+      state.cart = arrFiltrado;
+    },
   },
 });
 
