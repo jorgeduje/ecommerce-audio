@@ -47,7 +47,14 @@ export const cartSlice = createSlice({
         });
     }
   },
+  deleteById: (state, action) => {
+    const id = action.payload;
+    let arrFiltrado = state.cart.filter((item) => item.id !== id);
+    state.cart = arrFiltrado;
+  },
 });
-export const { addToCart, clearCart, countById, total } = cartSlice.actions;
+
+export const { addToCart, clearCart, countById, deleteById, total } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
