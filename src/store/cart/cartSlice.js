@@ -40,8 +40,8 @@ export const cartSlice = createSlice({
     },
     deleteById: (state, action) => {
       const id = action.payload;
-      // state.cart.filter((item) => item.id !== id);
-      console.log(id)
+      let arrFiltrado = state.cart.filter((item) => item.id !== id);
+      state.cart = arrFiltrado;
     },
   },
 });
