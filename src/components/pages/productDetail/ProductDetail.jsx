@@ -49,7 +49,7 @@ const ProductDetail = ({ product, onAdd }) => {
           </Box>
         </Box>
         <Box >
-        <img src={product.gallery.third.desktop} alt="img"/>
+        <img className={styles.imagenPrueba} src={product.gallery.third.desktop} alt="img"/>
         </Box>
       </Box>
     </Box>
