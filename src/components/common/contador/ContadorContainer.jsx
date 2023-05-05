@@ -1,9 +1,19 @@
-import { useState } from "react"
+import {  useState } from "react"
 import Contador from "./Contador"
 
 
-const ContadorContainer = ({onAdd}) => {
-     const [contador, setContador] = useState(1)
+
+
+const ContadorContainer = ({onAdd, initial=1}) => {
+
+
+
+     const [contador, setContador] = useState(initial)
+   
+
+
+     
+
     function sumar() {
         setContador(contador + 1)
     }
