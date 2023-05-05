@@ -19,6 +19,7 @@
 .bar .name {
     height: 1.5rem;
     width: auto;
+    cursor: pointer;
 }
 
 .bar .items {
