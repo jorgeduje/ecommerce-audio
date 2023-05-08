@@ -3,7 +3,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#D87D4A",
-      second: "#101010",
+      second: "#141414",
       third: "#F1F1F1",
       fourth: "#FAFAFA",
     },

@@ -1,6 +1,7 @@
-import { Typography, Button, Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { useParams } from "react-router";
 import ProductListContainer from "../ProductsList/ProductListContainer";
+import { ButtonCustom } from "../../Custom/CustomComponents";
 const Home = () => {
   const { categoryName } = useParams();
 
@@ -21,29 +22,66 @@ const Home = () => {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
+          padding: "0 10rem",
         }}
       >
-        <Box sx={{ width: { xs: "80%", md: "40%" } }}>
-          <Typography variant="subtitle1" color="primary.third">
+        <Box
+          sx={{
+            width: { xs: "80%", md: "40%" },
+            height: "70%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            variant="subtitle1"
+            color="primary.third"
+            sx={{
+              mixBlendMode: "normal",
+              opacity: "0.5",
+              fontWeight: "400",
+              fontSize: "14px",
+              lineHeight: "19px",
+              letterSpacing: "10px",
+            }}
+          >
             NEW PRODUCT
           </Typography>
-          <Typography variant="h2" color="primary.fourth">
+          <Typography
+            variant="h2"
+            color="primary.fourth"
+            sx={{ textAlign: "start" }}
+          >
             XX99 Mark II Headphones
           </Typography>
-          <Typography paragraph={true} color="primary.third">
+          <Typography
+            paragraph={true}
+            color="primary.third"
+            sx={{
+              textAlign: "start",
+              mixBlendMode: "normal",
+              opacity: "0.75",
+              fontWeight: "500",
+              fontSize: "15px",
+              lineHeight: "25px",
+            }}
+          >
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </Typography>
-          <Button variant="contained" sx={{ borderRadius: "0px" }}>
+          <ButtonCustom variant="contained" sx={{ borderRadius: "0px", padding: "15px 30px",  width: "160px"}}>
             SEE PRODUCT
-          </Button>
+          </ButtonCustom>
         </Box>
 
         <Box
           sx={{
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", md: "flex" },
             // height: "60vh",
-            width: "60%",
+            width: "90%",
+            justifyContent: { xs: "none", md: "flex-end" },
           }}
         >
           <img
@@ -53,7 +91,7 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <ProductListContainer categoryName={categoryName} />
+      <ProductListContainer categoryName={categoryName}/>
     </div>
   );
 };

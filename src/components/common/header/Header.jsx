@@ -14,7 +14,7 @@ const Header = ({size, navigate, menu}) => {
       <AppBar
         className={styles.navBarContainer}
         sx={{
-          backgroundColor: "secondary.third",
+          backgroundColor: "primary.second",
         }}
         position="static"
       >
