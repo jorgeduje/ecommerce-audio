@@ -2,8 +2,7 @@ import { Typography, Button, Box } from "@mui/material";
 import { useParams } from "react-router";
 import ProductListContainer from "../ProductsList/ProductListContainer";
 const Home = () => {
-console.log(useParams())
-  const { categoryName } = useParams()
+  const { categoryName } = useParams();
 
   return (
     <div>
