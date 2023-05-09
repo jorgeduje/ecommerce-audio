@@ -4,23 +4,17 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import styles from "./Header.module.css";
-import { useWindowSize } from "../../../utils/useWindowSize";
 import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, useNavigate } from "react-router-dom";
-import { menu } from "../../../utils/utils";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  const size = useWindowSize(null);
-  const navigate = useNavigate();
-
-
+const Header = ({size, navigate, menu}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         className={styles.navBarContainer}
         sx={{
-          backgroundColor: "secondary.third",
+          backgroundColor: "primary.second",
         }}
         position="static"
       >

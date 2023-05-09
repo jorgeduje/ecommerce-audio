@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteById, getTotalItems, getTotalPrice } from "../../../store/cart/cartSlice";
+import { deleteById, getTotalItems, getTotalPrice} from "../../../store/cart/cartSlice";
 import { useEffect } from "react";
-import ContadorContainer from "../../common/contador/ContadorContainer";
+import CartCounter from "../../common/cartCounter/CartCounter";
+
 
 const CartContainer = () => {
   const { cart, items, total } = useSelector((store) => store.cartSlice);
@@ -20,7 +21,7 @@ const CartContainer = () => {
         <div key={e.id}>
           <h1 key={e.id}>{e.name}</h1>
           <button onClick={() => dispatch(deleteById(e.id))}>delete</button>
-          <ContadorContainer initial={e.quantity} />
+          <CartCounter id={e.id} quantity={e.quantity}/>
         </div>
       ))}
 

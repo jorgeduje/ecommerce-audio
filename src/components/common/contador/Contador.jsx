@@ -47,16 +47,18 @@ const Contador = ({ contador, sumar, restar, onAdd }) => {
           +
         </Button>
       </Box>
-      <Box>
-        <ButtonCustom
-          onClick={()=>onAdd(contador)}
-          sx={{
-            width: "160px",
-          }}
-        >
-          Add to cart
-        </ButtonCustom>
-      </Box>
+      
+        <Box>
+          <ButtonCustom
+            onClick={() => onAdd(contador)}
+            sx={{
+              width: "160px",
+            }}
+          >
+            Add to cart
+          </ButtonCustom>
+        </Box>
+    
     </Box>
   );
 };

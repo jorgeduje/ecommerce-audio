@@ -4,15 +4,10 @@ import Contador from "./Contador"
 
 
 
-const ContadorContainer = ({onAdd, initial=1}) => {
-
-
+const ContadorContainer = ({onAdd, initial=1 }) => {
 
      const [contador, setContador] = useState(initial)
    
-
-
-     
 
     function sumar() {
         setContador(contador + 1)
@@ -22,7 +17,7 @@ const ContadorContainer = ({onAdd, initial=1}) => {
     }
    
   return (
-    <Contador contador={contador} sumar={sumar} restar={restar} onAdd={onAdd}/>
+    <Contador  contador={contador} sumar={sumar} restar={restar} onAdd={onAdd}/>
   )
 }
 
