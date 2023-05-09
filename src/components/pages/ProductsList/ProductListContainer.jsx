@@ -1,13 +1,15 @@
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductsList from "./ProductsList";
 import Loading from "../../common/loading/Loading";
+
+import { getAllProducts } from "../../../services/products";
 
 const ProductListContainer = ({ categoryName }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const data = axios.get("http://3.21.158.170/products");
+    const data = getAllProducts();
 
     data.then((res) => {
       if (categoryName) {

@@ -1,11 +1,12 @@
 // import React from 'react'
 import { useEffect, useState } from "react";
 import ProductDetail from "./ProductDetail";
-import axios from "axios";
+
 import { useParams } from "react-router-dom";
 import Loading from "../../common/loading/Loading";
 import { addToCart } from "../../../store/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import { getProductById } from "../../../services/products";
 
 const ProductDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -14,8 +15,7 @@ const ProductDetailContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(`http://3.21.158.170/products/${id}`)
+    getProductById(id)
       .then((res) => {
         setProduct(res.data);
       })
