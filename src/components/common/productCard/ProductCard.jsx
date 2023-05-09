@@ -103,7 +103,7 @@ const ProductCard = ({ product, index, show, onAdd }) => {
             >
               See Product
             </ButtonCustom>
-          </Link> : <ContadorContainer onAdd={onAdd}/>
+          </Link> : <> <Typography variant="h3">$ {product.price}</Typography> <ContadorContainer onAdd={onAdd}/> </>
           }
           </CardContent>
         </Card>

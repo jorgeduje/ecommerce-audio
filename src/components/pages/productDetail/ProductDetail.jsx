@@ -20,10 +20,10 @@ const ProductDetail = ({ product, onAdd }) => {
         }}
       >
         <Box sx={{ width: "60%" }}>
-          <Typography variant="h2">
+          <Typography variant="h2" >
             FEATURES
           </Typography>
-          <Typography className={styles.featuresContainer} >{product.features}</Typography>
+          <Typography className={styles.featuresContainer} lineHeight="25px">{product.features}</Typography>
         </Box>
         <Box sx={{
           width: "40%",
@@ -34,18 +34,14 @@ const ProductDetail = ({ product, onAdd }) => {
         >
           <Typography variant="h2">IN THE BOX</Typography>
           {product.includes.map((item, index) => (
-            <Typography className={styles.inTheBoxContainer} key={index}>{item.item}</Typography>
+            <Typography className={styles.inTheBoxContainer} key={index} lineHeight="25px">{item.item}</Typography>
           ))}
         </Box>
       </Box>
       <Box   display= "flex" marginTop= "40px" gap="20px"  >
-        <Box display="flex" flexDirection="column"  gap="20px">
-          <Box  className={styles.imgContainer}>
-            <img className={styles.img} src={product.gallery.first.desktop} alt="img"/>
-          </Box>
-          <Box className={styles.imgContainer}>
-            <img src={product.gallery.second.desktop} alt="img"/>
-          </Box>
+        <Box display="flex" flexDirection="column"  gap="20px" height="100"  >
+            <img src={product.gallery.first.desktop} alt="img" className={styles.imagenPrueba}/>
+            <img src={product.gallery.second.desktop} alt="img" className={styles.imagenPrueba}/>
         </Box>
         <Box >
         <img className={styles.imagenPrueba} src={product.gallery.third.desktop} alt="img"/>
