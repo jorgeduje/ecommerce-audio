@@ -7,7 +7,6 @@ import styles from "./Header.module.css";
 import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import { Modal } from "@mui/material";
 import CartModalContainer from "../cartModal/CartModalContainer";
 
 const Header = ({ size, navigate, menu, open, handleOpen, handleClose }) => {
@@ -88,14 +87,7 @@ const Header = ({ size, navigate, menu, open, handleOpen, handleClose }) => {
             >
               <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
             </IconButton>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <CartModalContainer/>
-            </Modal>
+            <CartModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Toolbar>
       </AppBar>
