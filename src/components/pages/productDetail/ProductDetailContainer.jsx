@@ -15,7 +15,7 @@ const ProductDetailContainer = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`http://3.21.158.170/products/${id}`)
       .then((res) => {
         setProduct(res.data);
       })

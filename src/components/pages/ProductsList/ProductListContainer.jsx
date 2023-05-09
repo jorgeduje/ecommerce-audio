@@ -7,7 +7,7 @@ const ProductListContainer = ({ categoryName }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const data = axios.get("http://localhost:5000/products");
+    const data = axios.get("http://3.21.158.170/products");
 
     data.then((res) => {
       if (categoryName) {

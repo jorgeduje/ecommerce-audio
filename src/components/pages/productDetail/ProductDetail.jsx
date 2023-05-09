@@ -5,6 +5,8 @@ import styles from "./ProductDetail.module.css"
 
 const ProductDetail = ({ product, onAdd }) => {
 
+  console.log(product);
+
   return (
     <Box sx={{ dispplay: "flex", padding: "165px" }}>
       <ProductCardContainer product={product} show={false} />
