@@ -1,9 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import CartModal from "./cartModal";
 import { useEffect } from "react";
-import { deleteById, getTotalItems, getTotalPrice } from "../../../store/cart/cartSlice";
+import {
+  deleteById,
+  getTotalItems,
+  getTotalPrice,
+} from "../../../store/cart/cartSlice";
 
-const CartModalContainer = () => {
+const CartModalContainer = ({ open, handleClose }) => {
   const { cart, items, total } = useSelector((store) => store.cartSlice);
 
   const dispatch = useDispatch();
@@ -13,10 +17,19 @@ const CartModalContainer = () => {
     dispatch(getTotalItems());
   }, [cart, dispatch]);
   function eliminarCart(id) {
-    dispatch(deleteById(id))
+    dispatch(deleteById(id));
   }
 
-  return <CartModal cart={cart} items={items} total={total} deleteById={eliminarCart}/>;
+  return (
+    <CartModal
+      cart={cart}
+      items={items}
+      total={total}
+      deleteById={eliminarCart}
+      open={open}
+      handleClose={handleClose}
+    />
+  );
 };
 
 export default CartModalContainer;
