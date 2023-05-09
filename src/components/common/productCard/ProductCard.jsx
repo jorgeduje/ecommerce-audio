@@ -6,8 +6,9 @@ import styles from "./ProductCard.module.css";
 import { ButtonCustom } from "../../Custom/CustomComponents";
 import { useWindowSize } from "../../../utils/useWindowSize";
 import { Link } from "react-router-dom";
+import ContadorContainer from "../contador/ContadorContainer";
 
-const ProductCard = ({ product, index, show }) => {
+const ProductCard = ({ product, index, show, onAdd }) => {
   const size = useWindowSize();
 
   let isPair = index % 2 === 0
@@ -102,7 +103,7 @@ const ProductCard = ({ product, index, show }) => {
             >
               See Product
             </ButtonCustom>
-          </Link> : "contador"
+          </Link> : <> <Typography variant="h3">$ {product.price}</Typography> <ContadorContainer onAdd={onAdd}/> </>
           }
           </CardContent>
         </Card>
