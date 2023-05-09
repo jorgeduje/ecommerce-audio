@@ -7,7 +7,7 @@ import Contador from "./Contador"
 const ContadorContainer = ({onAdd, initial=1 }) => {
 
      const [contador, setContador] = useState(initial)
-   
+    
 
     function sumar() {
         setContador(contador + 1)

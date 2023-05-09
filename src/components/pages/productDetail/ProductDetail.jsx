@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import ProductCardContainer from "../../common/productCard/ProductCardContainer";
-import ContadorContainer from "../../common/contador/ContadorContainer";
 import styles from "./ProductDetail.module.css"
 
 const ProductDetail = ({ product, onAdd }) => {
@@ -9,9 +8,7 @@ const ProductDetail = ({ product, onAdd }) => {
 
   return (
     <Box sx={{ dispplay: "flex", padding: "165px" }}>
-      <ProductCardContainer product={product} show={false} />
-
-      <ContadorContainer onAdd={onAdd} />
+      <ProductCardContainer product={product} onAdd={onAdd} show={false} />
 
       <Box
         component={"section"}
