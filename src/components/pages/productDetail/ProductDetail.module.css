@@ -1,8 +1,5 @@
 .featuresContainer,
 .inTheBoxContainer {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
     opacity: 0.5;
     text-align: left;
 }
@@ -13,4 +10,10 @@
     object-fit: cover;
     border-radius: 8px;
 
+}
+
+.galleryContainer{
+    display: flex;
+    margin-top: 40px;
+    gap: 20px
 }
