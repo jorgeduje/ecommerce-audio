@@ -4,7 +4,15 @@ import CartCounter from "../cartCounter/CartCounter";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
-const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
+const CartModal = ({
+  cart,
+  items,
+  total,
+  deleteById,
+  open,
+  handleClose,
+  clearCart,
+}) => {
   return (
     <Modal
       open={open}
@@ -15,7 +23,7 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
       <Box
         sx={{
           position: "absolute",
-          top: { sm: "200px", xs: "5%" },
+          top: { sm: "200px", xs: "10%" },
           right: { sm: "0px", xs: "50%" },
           transform: {
             lg: "translate(-42%, -17%)",
@@ -24,7 +32,7 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
           },
           width: "377px",
           bgcolor: "background.paper",
-          border: "2px solid #000",
+          border: "none",
           boxShadow: 24,
           p: 4,
           display: "flex",
@@ -49,13 +57,31 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
                   fontSize: "18px",
                 }}
               >{`cart (${items})`}</Typography>
-              <Typography>Remove all</Typography>
+              <Typography
+                onClick={() => clearCart()}
+                sx={{
+                  textDecorationLine: "underline",
+                  mixBlendMode: "normal",
+                  opacity: "0.5",
+                  cursor: "pointer",
+                }}
+              >
+                Remove all
+              </Typography>
             </Box>
             <Box
               sx={{
                 maxHeight: "240px",
                 overflow: "auto",
                 margin: "32px 0px 8px 0px",
+                scrollbarWidth: "1px",
+                scrollbarColor: "gray gray",
+                "&::-webkit-scrollbar": {
+                  width: "1px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "gray",
+                },
               }}
             >
               {cart.map((e) => (
@@ -70,17 +96,24 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
                     alignItems: "center",
                   }}
                 >
-                  <Box sx={{ display: "flex" }}>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
                     <IconButton
                       onClick={() => deleteById(e.id)}
-                      sx={{ width: "64px", height: "64px" }}
+                      sx={{
+                        width: "64px",
+                        height: "64px",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        "&:hover": {
+                          backgroundColor: "white",
+                        },
+                      }}
                     >
                       <DeleteIcon sx={{ fontSize: "30px" }} />
                     </IconButton>
                     {/* <button onClick={() => deleteById(e.id)}>delete</button> */}
                     <Box>
                       <Typography
-                        
                         sx={{
                           fontWeight: "700",
                           fontSize: "15px",
@@ -90,7 +123,6 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
                         {e.name.split(" ")[0]}
                       </Typography>
                       <Typography
-                       
                         sx={{
                           mixBlendMode: "normal",
                           opacity: "0.5",
@@ -117,8 +149,17 @@ const CartModal = ({ cart, items, total, deleteById, open, handleClose }) => {
                 marginBottom: "24px",
               }}
             >
-              <Typography>total</Typography>
-              <Typography>{`$${total}`}</Typography>
+              <Typography
+                sx={{
+                  mixBlendMode: "normal",
+                  opacity: "0.5",
+                  textTransform: "uppercase",
+                  fontWeight: "500",
+                }}
+              >
+                total
+              </Typography>
+              <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
             </Box>
             <ButtonCustom>checkout</ButtonCustom>
           </>
