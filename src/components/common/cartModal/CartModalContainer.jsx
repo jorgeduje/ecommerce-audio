@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CartModal from "./cartModal";
 import { useEffect } from "react";
 import {
+  clearCart,
   deleteById,
   getTotalItems,
   getTotalPrice,
@@ -19,6 +20,9 @@ const CartModalContainer = ({ open, handleClose }) => {
   function eliminarCart(id) {
     dispatch(deleteById(id));
   }
+  function eliminarTodosCart() {
+    dispatch(clearCart());
+  }
 
   return (
     <CartModal
@@ -28,6 +32,7 @@ const CartModalContainer = ({ open, handleClose }) => {
       deleteById={eliminarCart}
       open={open}
       handleClose={handleClose}
+      clearCart={eliminarTodosCart}
     />
   );
 };

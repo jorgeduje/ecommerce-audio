@@ -18,6 +18,7 @@ const CartCounter = ({ id, quantity }) => {
         backgroundColor: "primary.third",
         width: "96px",
         height: "32px",
+        marginRight: "10px",
       }}
     >
       <Button
@@ -25,7 +26,7 @@ const CartCounter = ({ id, quantity }) => {
         disabled={quantity === 1}
         sx={{
           color: "secondary.third",
-          opacity: "0.25",
+          opacity: "0.5",
           minWidth: "20px",
           height: "20px",
         }}
@@ -37,7 +38,7 @@ const CartCounter = ({ id, quantity }) => {
         onClick={() => dispatch(addOneById(id))}
         sx={{
           color: "secondary.third",
-          opacity: "0.25",
+          opacity: "0.5",
           minWidth: "20px",
           height: "20px",
         }}
