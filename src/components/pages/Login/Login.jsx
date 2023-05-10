@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import CheckoutModalContainer from "../../common/checkoutModal/checkoutModalContainer";
 // import { login } from "../../../store/auth/authSlice";
 
 const Login = ({
@@ -187,6 +188,7 @@ const Login = ({
       >
         Ingresar
       </Button> */}
+      <CheckoutModalContainer/>
     </Box>
   );
 };
