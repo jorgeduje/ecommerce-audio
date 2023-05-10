@@ -34,7 +34,7 @@ const ProductCard = ({ product, index, show, onAdd }) => {
               className={styles.imgContainer}
               component="img"
               image={product.image.desktop}
-              alt="green iguana"
+              alt="img"
             />
           )}
           {/* tablet img */}
