@@ -32,6 +32,7 @@ const ProductDetailContainer = () => {
       quantity: cantidad,
     };
     dispatch(addToCart(obj));
+    
   };
 
   return (

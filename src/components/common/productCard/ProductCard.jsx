@@ -11,66 +11,65 @@ import ContadorContainer from "../contador/ContadorContainer";
 const ProductCard = ({ product, index, show, onAdd }) => {
   const size = useWindowSize();
 
-  let isPair = index % 2 === 0
+  let isPair = index % 2 === 0;
 
   return (
     <>
-     
-        <Card
-          className={styles.cardContainer}
-          key={product.id}
+      <Card
+        className={styles.cardContainer}
+        key={product.id}
+        sx={{
+          width: "100%",
+          height: "35rem",
+          display: "flex",
+          flexDirection: isPair ? "row" : "row-reverse",
+          boxShadow: "none !important",
+          margin: "4rem 0",
+        }}
+      >
+        {/* desktop img */}
+        {size.width > 900 && (
+          <CardMedia
+            className={styles.imgContainer}
+            component="img"
+            image={product.image.desktop}
+            alt="img"
+          />
+        )}
+        {/* tablet img */}
+        {size.width > 600 && size.width < 900 && (
+          <CardMedia
+            className={styles.imgContainer}
+            component="img"
+            image={product.image.tablet}
+            alt="green iguana"
+          />
+        )}
+        {/* mobile img */}
+        {size.width < 600 && (
+          <CardMedia
+            className={styles.imgContainer}
+            component="img"
+            image={product.image.mobile}
+            alt={product.name}
+          />
+        )}
+        <CardContent
+          className={styles.infoContainer}
           sx={{
-            width: "100%",
-            height: "35rem",
             display: "flex",
-            flexDirection: isPair ? "row" : "row-reverse",
-            boxShadow: "none !important",
-            margin: "4rem 0",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            height: " 100%",
+            width: "50%",
+            paddingLeft: isPair ? "9rem" : "0",
+            paddingRight: isPair ? "0" : "9rem",
+            gap: " 2rem",
           }}
         >
-          {/* desktop img */}
-          {size.width > 900 && (
-            <CardMedia
-              className={styles.imgContainer}
-              component="img"
-              image={product.image.desktop}
-              alt="img"
-            />
-          )}
-          {/* tablet img */}
-          {size.width > 600 && size.width < 900 && (
-            <CardMedia
-              className={styles.imgContainer}
-              component="img"
-              image={product.image.tablet}
-              alt="green iguana"
-            />
-          )}
-          {/* mobile img */}
-          {size.width < 600 && (
-            <CardMedia
-              className={styles.imgContainer}
-              component="img"
-              image={product.image.mobile}
-              alt={product.name}
-            />
-          )}
-          <CardContent
-            className={styles.infoContainer}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              height: " 100%",
-              width: "50%",
-              paddingLeft: isPair ? "9rem": '0',
-              paddingRight: isPair ? '0' : '9rem',
-              gap: " 2rem",
-            }}
-          >
-            {/* new product title */}
-            {/* <Typography
+          {/* new product title */}
+          {/* <Typography
         variant="p"
         sx={{
           color: "primary.main",
@@ -83,31 +82,35 @@ const ProductCard = ({ product, index, show, onAdd }) => {
         NEW PRODUCT
       </Typography>  */}
 
-            <Typography variant="h1" className={styles.productName}>
-              {product.name}
-            </Typography>
-            <Typography variant="body2" className={styles.detail}>
-              {product.description}
-            </Typography>
-          {
-            show ? <Link
-            to={`/product/${product.id}`}
-            style={{ padding: "0", marginTop: "1rem" }}
-          >
-            <ButtonCustom
-              style={{
-                width: "10rem",
-                textTransform: "capitalize",
-                textDecoration: "none",
-              }}
+          <Typography variant="h1" className={styles.productName}>
+            {product.name}
+          </Typography>
+          <Typography variant="body2" className={styles.detail}>
+            {product.description}
+          </Typography>
+          {show ? (
+            <Link
+              to={`/product/${product.id}`}
+              style={{ padding: "0", marginTop: "1rem" }}
             >
-              See Product
-            </ButtonCustom>
-          </Link> : <> <Typography variant="h3">$ {product.price}</Typography> <ContadorContainer onAdd={onAdd}/> </>
-          }
-          </CardContent>
-        </Card>
-      
+              <ButtonCustom
+                style={{
+                  width: "10rem",
+                  textTransform: "capitalize",
+                  textDecoration: "none",
+                }}
+              >
+                See Product
+              </ButtonCustom>
+            </Link>
+          ) : (
+            <>
+              <Typography variant="h3">$ {product.price}</Typography>{" "}
+              <ContadorContainer onAdd={onAdd} />{" "}
+            </>
+          )}
+        </CardContent>
+      </Card>
     </>
   );
 };
