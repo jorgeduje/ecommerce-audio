@@ -11,7 +11,7 @@ const ProductDetail = ({ product, onAdd }) => {
     <Box
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      {/* <ProductCardContainer product={product} onAdd={onAdd} show={false} /> */}
+      <ProductCardContainer product={product} onAdd={onAdd} show={false} />
 
       <Box
         component={"section"}
