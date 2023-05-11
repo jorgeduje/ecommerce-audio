@@ -11,7 +11,7 @@ const ProductDetail = ({ product, onAdd }) => {
     <Box
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      {/* <ProductCardContainer product={product} onAdd={onAdd} show={false} /> */}
+      <ProductCardContainer product={product} onAdd={onAdd} show={false} />
 
       <Box
         component={"section"}
@@ -110,11 +110,11 @@ const ProductDetail = ({ product, onAdd }) => {
         <SuggestionsContainer images={product.categoryImage} name={product.name} />
         <SuggestionsContainer images={product.categoryImage} name={product.name} />
       </Box>
-      {/* <Box display='flex' gap='30px' marginTop='200px'>
+      <Box display='flex' flexDirection={{xs: "column", sm:"row"}} gap='30px' marginTop='200px' width={"100%"} >
         <MiniCategoryCardContainer images={product.categoryImage} category={product.category} />
         <MiniCategoryCardContainer images={product.categoryImage} category={product.category} />
         <MiniCategoryCardContainer images={product.categoryImage} category={product.category} />
-      </Box> */}
+      </Box>
     </Box>
   );
 };
