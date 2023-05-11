@@ -4,39 +4,65 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import styles from './Menu.module.css'
+import styles from "./Menu.module.css";
+import { Link } from "react-router-dom";
+import { menu } from '../../../Router/navigation'
 
-const menu = ["home", "headphones", "speakers", "earphones"];
-
-const Menu = ({ state, toggleDrawer}) => {
- 
+const Menu = ({ state, toggleDrawer }) => {
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        backgroundColor: "primary.second",
+        height: "100%",
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {menu.map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} key={index} />
-            </ListItemButton>
+        {menu.map((text) => (
+          <ListItem key={text.id} disablePadding>
+            <Link to={text.path} className={styles.itemLink}>
+              <ListItemText primary={text.title} key={text.id} />
+            </Link>
           </ListItem>
         ))}
       </List>
+      <hr style={{ color: "secondary.second", margin: "1.5rem 1rem" }} />
+      <Box className={styles.linksBox}>
+        <Link
+          to="/register"
+          style={{
+            color: "#d87d4a",
+            textDecoration: "none",
+            margin: "1rem 2rem 0",
+          }}
+        >
+          {" "}
+          Signin{" "}
+        </Link>
+        <Link
+          to="/login"
+          style={{
+            color: "#d87d4a",
+            textDecoration: "none",
+            margin: "1rem 2rem 0",
+          }}
+        >
+          Login
+        </Link>
+      </Box>
     </Box>
   );
   return (
     <div>
       {["left"].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}  className={styles.menu}>
-            <MenuIcon />
+        <React.Fragment key={anchor} >
+          <Button onClick={toggleDrawer(anchor, true)} className={styles.menu}>
+            <MenuIcon sx={{padding:"0"}}/>
           </Button>
           <SwipeableDrawer
             anchor={anchor}

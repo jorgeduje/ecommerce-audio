@@ -1,6 +1,7 @@
 .registerContainer {
-    background-color: #F2F2F2;
-    padding: 10rem;
+    padding: 5rem 10rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .gridContainer {
@@ -9,6 +10,7 @@
     background-color: #fff;
     padding: 3rem;
     border-radius: 8px;
+    /* margin: 10rem; */
 }
 
 .gridContainer .register {
@@ -16,7 +18,7 @@
     font-size: 32px;
     line-height: 36px;
     letter-spacing: 1.14px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .gridContainer .h2 {
@@ -24,8 +26,8 @@
     font-size: 13px;
     line-height: 25px;
     letter-spacing: 0.93px;
-    color: #D87D4A;
-    margin-bottom: 1.5rem;
+    color: #d87d4a;
+    margin: 2rem 0 1rem;
 }
 
 .gridContainer .gridRow {
@@ -37,4 +39,38 @@
 .gridContainer .gridRow .inputContainer {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.gridContainer .gridRow .inputContainer label {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16.39px;
+    letter-spacing: -0.21px;
+}
+
+.gridContainer .btn {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 900px) {
+    .gridContainer .gridRow {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:900px) {
+    .registerContainer {
+        padding: 5rem 2.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .registerContainer {
+        padding: 5rem 1.5rem;
+    }
 }

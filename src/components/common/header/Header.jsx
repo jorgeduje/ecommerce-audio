@@ -4,27 +4,18 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import styles from "./Header.module.css";
-import { useWindowSize } from "../../../hooks/useWindowSize";
 import MenuContainer from "../menu/MenuContainer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import CartModalContainer from "../cartModal/CartModalContainer";
 
-const menu = [
-  { id: 1, title: "home", path: "/" },
-  { id: 2, title: "headphones", path: "/" },
-  { id: 3, title: "speakers", path: "/" },
-  { id: 4, title: "earphones", path: "/" },
-];
-
-const Header = () => {
-  const size = useWindowSize(null);
-
+const Header = ({ size, navigate, menu, open, handleOpen, handleClose }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         className={styles.navBarContainer}
         sx={{
-          backgroundColor: "secondary.third",
+          backgroundColor: "primary.second",
         }}
         position="static"
       >
@@ -33,10 +24,11 @@ const Header = () => {
             <>
               <MenuContainer />
               <img
-                src="src/assets/audio.png"
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
-              />{" "}
+                onClick={() => navigate("/")}
+              />
             </>
           ) : (
             <Box
@@ -51,9 +43,10 @@ const Header = () => {
                 <MenuIcon />
               </IconButton>
               <img
-                src="src/assets/audio.png"
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
                 alt="title"
                 className={styles.name}
+                onClick={() => navigate("/")}
               />
             </Box>
           )}
@@ -72,16 +65,30 @@ const Header = () => {
               );
             })}
           </Box>
-          <IconButton
-            className={styles.cartIcon}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ padding: "0" }}
-          >
-            <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
-          </IconButton>
+          <Box className={styles.usersContainer}>
+            <Box className={styles.loginBox}>
+              <Link to="/register" className={styles.linkSign}>
+                {" "}
+                Signin{" "}
+              </Link>
+              <hr />
+              <Link to="/login" className={styles.linkSign}>
+                Login
+              </Link>
+            </Box>
+            <IconButton
+              className={styles.cartIcon}
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ padding: "0" }}
+              onClick={() => handleOpen()}
+            >
+              <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
+            </IconButton>
+            <CartModalContainer open={open} handleClose={handleClose} />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,6 +1,6 @@
 .footerContainer {
     padding: 3rem 10rem;
-    background-color: #000000 !important;
+    background-color: #141414 !important;
     /* height: 22.8rem; */
     justify-content: center;
     gap: 2rem;
@@ -15,6 +15,7 @@
 .footerContainer .bar .name {
     height: 1.5rem;
     width: auto;
+    cursor: pointer;
 }
 
 .footerContainer .bar .items {
@@ -92,6 +93,9 @@
 }
 
 @media (max-width:600px) {
+    .footerContainer {
+        padding: 3.7rem 1.5rem;
+    }
     .footerContainer .bar {
         align-items: center !important;
         gap: 3rem;

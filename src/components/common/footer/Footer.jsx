@@ -6,21 +6,21 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
-import { useWindowSize } from "../../../hooks/useWindowSize";
+import { menu } from "../../../Router/navigation";
+import { useWindowSize } from "../../../utils/useWindowSize";
 
-const menu = [
-  { id: 1, title: "home", path: "/" },
-  { id: 2, title: "headphones", path: "/" },
-  { id: 3, title: "speakers", path: "/" },
-  { id: 4, title: "earphones", path: "/" },
-];
-const Footer = () => {
+const Footer = ({ navigate}) => {
   const size = useWindowSize();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className={styles.footerContainer} position="relative">
         <Toolbar className={styles.bar}>
-          <img src="src/assets/audio.png" alt="title" className={styles.name} />
+          <img
+            src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
+            alt="title"
+            className={styles.name}
+            onClick={() => navigate("/")}
+          />
           <div className={styles.items}>
             {menu.map((item) => {
               return (
@@ -64,10 +64,10 @@ const Footer = () => {
         ) : (
           <>
             <p className={styles.description}>
-              Audiophile is an all in one stop to fulfill your audio needs.
-              Were a small team of music lovers and sound specialists who are
-              devoted to helping you get the most out of personal audio. Come
-              and visit our demo facility - were open 7 days a week.
+              Audiophile is an all in one stop to fulfill your audio needs. Were
+              a small team of music lovers and sound specialists who are devoted
+              to helping you get the most out of personal audio. Come and visit
+              our demo facility - were open 7 days a week.
             </p>
             <Box className={styles.bottom}>
               <p className={styles.copyRights}>
