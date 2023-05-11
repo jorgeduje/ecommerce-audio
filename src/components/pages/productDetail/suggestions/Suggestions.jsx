@@ -1,16 +1,16 @@
 import { Typography } from "@mui/material"
 import Box from "@mui/material/Box";
 import styles from './Suggestions.module.css'
-import { ButtonCustom4 } from "../../../Custom/CustomComponents";
+import { ButtonCustom } from "../../../Custom/CustomComponents";
 
 const Suggestions = ({images, name}) => {
   return (
-    <Box className={styles.container}>
-        <Box className={styles.boxImage}>
-            <img className={styles.image} src={images.desktop}/>
+    <Box  sx={{ width:"100%", border:"solid"}}>
+        <Box className={styles.boxImage} sx={{ width:"100%"}}>
+            <img className={styles.image} src={images.desktop} style={{width: "100%", justifyContent:"center"}}/>
         </Box>
         <Typography className={styles.name} variant="h5">{name}</Typography>
-        <ButtonCustom4 className={styles.button}>SEE PRODUCT</ButtonCustom4>
+        <ButtonCustom sx={{width:'160px'}} className={styles.button}>SEE PRODUCT</ButtonCustom>
     </Box>
   )
 }

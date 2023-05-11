@@ -8,7 +8,7 @@ const MiniCategoryCard = ({ images, category }) => {
         <Box component='div' className={styles.boxImage}>
             <img className={styles.image}  src={images.desktop}></img>
             <Typography variant="h5">{category.toUpperCase()}</Typography>
-            <Typography variant='body2'>SHOP <span style={{color:'#D87D4A'}}>></span></Typography>
+            <Typography variant='body2'>SHOP <span style={{color:'#D87D4A'}}>{">"}</span></Typography>
         </Box>
     )
 }
