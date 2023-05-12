@@ -36,7 +36,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
         >
           <Box
             sx={{
-              width: { xs: "100%", md:"60%" },
+              width: { xs: "100%", md: "60%" },
               display: "flex",
               flexDirection: { xs: "column" },
             }}
@@ -60,19 +60,25 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
               justifyContent: { xs: "space-between", sm: "flex-start" },
             }}
           >
-            <Typography variant="h4" mb={2} width={{ xs: "100%", sm: "40%", md:"100%" }}>
+            <Typography
+              variant="h4"
+              mb={2}
+              width={{ xs: "100%", sm: "40%", md: "100%" }}
+            >
               IN THE BOX
             </Typography>
             <Box
               sx={{
-                width: { xs: "100%", sm: "50%", md:"100%" },
+                width: { xs: "100%", sm: "50%", md: "100%" },
                 display: "flex",
                 flexDirection: "column",
               }}
             >
               {product.includes.map((item, index) => (
-                <Box key={index} sx={{display:"flex",}}>
-                  <Typography mr={"15px"} color={"primary"} fontWeight={"bold"}>{item.quantity}x</Typography>
+                <Box key={index} sx={{ display: "flex" }}>
+                  <Typography mr={"15px"} color={"primary"} fontWeight={"bold"}>
+                    {item.quantity}x
+                  </Typography>
                   <Typography
                     variant="body2"
                     className={styles.inTheBoxContainer}
@@ -93,7 +99,6 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             flexDirection: { xs: "column", sm: "initial" },
             justifyContent: "space-between",
             // height: "600px"
-
           }}
         >
           <Box
@@ -102,7 +107,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
               flexDirection: { xs: "column" },
               gap: "20px",
               height: "100",
-              width: {xs: "100%", sm: "40%"},
+              width: { xs: "100%", sm: "40%" },
             }}
           >
             <img
@@ -118,7 +123,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           </Box>
           <Box
             sx={{
-              width: {xs: "100%", sm: "60%"},
+              width: { xs: "100%", sm: "60%" },
             }}
           >
             <img
@@ -134,23 +139,36 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             width: "100%",
             display: "flex",
             flexDirection: "column",
-            marginTop: "200px",
-            border: "solid green",
+            marginTop: "50px",
           }}
         >
-          <SuggestionsContainer
-            images={product.categoryImage}
-            name={product.name}
-          />
-          <SuggestionsContainer
-            images={product.categoryImage}
-            name={product.name}
-          />
-          <SuggestionsContainer
-            images={product.categoryImage}
-            name={product.name}
-          />
+          <Typography variant="h5" align="center">
+            YOU MAY ALSO LIKE
+          </Typography>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: "50px",
+              marginTop: "50px"
+            }}
+          >
+            <SuggestionsContainer
+              images={product.categoryImage}
+              name={product.name}
+            />
+            <SuggestionsContainer
+              images={product.categoryImage}
+              name={product.name}
+            />
+            <SuggestionsContainer
+              images={product.categoryImage}
+              name={product.name}
+            />
+          </Box>
         </Box>
+
         <Box
           display="flex"
           flexDirection={{ xs: "column", sm: "row" }}

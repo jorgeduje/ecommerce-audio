@@ -1,18 +1,28 @@
-import { Typography } from "@mui/material"
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import styles from './Suggestions.module.css'
+import styles from "./Suggestions.module.css";
 import { ButtonCustom } from "../../Custom/CustomComponents";
 
-const Suggestions = ({images, name}) => {
+const Suggestions = ({ images, name }) => {
   return (
-    <Box  sx={{ width:"100%", border:"solid"}}>
-        <Box className={styles.boxImage} sx={{ width:"100%"}}>
-            <img className={styles.image} src={images.desktop} style={{width: "100%", justifyContent:"center"}}/>
-        </Box>
-        <Typography className={styles.name} variant="h5">{name}</Typography>
-        <ButtonCustom sx={{width:'160px'}} className={styles.button}>SEE PRODUCT</ButtonCustom>
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", height: {xs: "200px", md: "300px"} }}>
+        <img
+          className={styles.image}
+          src={images.desktop}
+          style={{ width: "100%", justifyContent: "center", height: "100%" }}
+        />
+      </Box>
+      <Typography variant="h5" align="center" my={3}>
+        {name}
+      </Typography>
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <ButtonCustom sx={{ width: "160px" }} className={styles.button}>
+          SEE PRODUCT
+        </ButtonCustom>
+      </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Suggestions
+export default Suggestions;
