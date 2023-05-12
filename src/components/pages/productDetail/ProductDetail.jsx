@@ -88,10 +88,12 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
         <Box
           className={styles.galleryContainer}
           sx={{
-            width: "90%",
+            width: "100%",
             display: "flex",
             flexDirection: { xs: "column", sm: "initial" },
-            border: "solid red",
+            justifyContent: "space-between",
+            // height: "600px"
+
           }}
         >
           <Box
@@ -100,7 +102,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
               flexDirection: { xs: "column" },
               gap: "20px",
               height: "100",
-              border: "solid",
+              width: {xs: "100%", sm: "40%"},
             }}
           >
             <img
@@ -116,7 +118,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           </Box>
           <Box
             sx={{
-              width: "100%",
+              width: {xs: "100%", sm: "60%"},
             }}
           >
             <img
