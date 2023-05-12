@@ -170,11 +170,13 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
         </Box>
 
         <Box
-          display="flex"
-          flexDirection={{ xs: "column", sm: "row" }}
-          gap="30px"
-          marginTop="200px"
-          width={"100%"}
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: "50px",
+          marginTop: "100px"
+        }}
         >
           <MiniCategoryCardContainer
             images={product.categoryImage}
