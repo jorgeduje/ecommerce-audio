@@ -1,7 +1,7 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import { useParams } from "react-router";
 import ProductListContainer from "../ProductsList/ProductListContainer";
-import { ButtonCustom } from "../../Custom/CustomComponents";
+// import { ButtonCustom } from "../../Custom/CustomComponents";
 const Home = () => {
   const { categoryName } = useParams();
 
@@ -22,66 +22,55 @@ const Home = () => {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          padding: "0 10rem",
         }}
       >
         <Box
           sx={{
             width: { xs: "80%", md: "40%" },
-            height: "70%",
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            height: "60vh",
+            alignItems: "center",
           }}
         >
-          <Typography
-            variant="subtitle1"
-            color="primary.third"
+          <Box
             sx={{
-              mixBlendMode: "normal",
-              opacity: "0.5",
-              fontWeight: "400",
-              fontSize: "14px",
-              lineHeight: "19px",
-              letterSpacing: "10px",
+              width: "80%",
+              textAlign: { xs: "center", md: "left" },
             }}
           >
-            NEW PRODUCT
-          </Typography>
-          <Typography
-            variant="h2"
-            color="primary.fourth"
-            sx={{ textAlign: "start" }}
-          >
-            XX99 Mark II Headphones
-          </Typography>
-          <Typography
-            paragraph={true}
-            color="primary.third"
-            sx={{
-              textAlign: "start",
-              mixBlendMode: "normal",
-              opacity: "0.75",
-              fontWeight: "500",
-              fontSize: "15px",
-              lineHeight: "25px",
-            }}
-          >
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </Typography>
-          <ButtonCustom variant="contained" sx={{ borderRadius: "0px", padding: "15px 30px",  width: "160px"}}>
-            SEE PRODUCT
-          </ButtonCustom>
+            <Typography
+              variant="subtitle1"
+              color="primary.third"
+              className="subtitle1"
+            >
+              NEW PRODUCT
+            </Typography>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h2" } }}
+              color="primary.fourth"
+              className="h2Home"
+            >
+              XX99 Mark II Headphones
+            </Typography>
+            <Typography variant="body2" color="primary.third" className="body2">
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{ borderRadius: "0px", marginTop: "20px" }}
+              className="seeProduct"
+            >
+              SEE PRODUCT
+            </Button>
+          </Box>
         </Box>
 
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
-            // height: "60vh",
-            width: "90%",
-            justifyContent: { xs: "none", md: "flex-end" },
+            display: { xs: "none", md: "block" },
+            width: "60%",
           }}
         >
           <img

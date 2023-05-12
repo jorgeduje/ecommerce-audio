@@ -5,6 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
 const CartModal = ({
+  navigate,
   cart,
   items,
   total,
@@ -161,7 +162,7 @@ const CartModal = ({
               </Typography>
               <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
             </Box>
-            <ButtonCustom>checkout</ButtonCustom>
+            <ButtonCustom onClick={()=>navigate("/checkout")}>checkout</ButtonCustom>
           </>
         ) : (
           <Typography>no tenes nada agregado</Typography>

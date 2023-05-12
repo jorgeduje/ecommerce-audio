@@ -176,7 +176,10 @@ const Login = ({
               </CssTextFieldPassword>
             </Box>
           </Box>
-          <ButtonCustom sx={{ width: { xs: "100%", sm: "284px" } }} type="submit">
+          <ButtonCustom
+            sx={{ width: { xs: "100%", sm: "284px" } }}
+            type="submit"
+          >
             Continue
           </ButtonCustom>
         </form>
