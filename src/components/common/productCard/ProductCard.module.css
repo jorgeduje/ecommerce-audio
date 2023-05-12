@@ -36,7 +36,8 @@
     }
     .cardContainer .infoContainer .productName {
         word-wrap: break-word;
-        width: 257px;
+        width: 100%;
+        text-align: center;
     }
     .cardContainer .infoContainer .detail {
         text-align: center;
