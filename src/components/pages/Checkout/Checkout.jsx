@@ -1,21 +1,11 @@
 import {
-    ButtonCustom,
-    CssTextField,
-    LinkGoBack,
-  } from "../../Custom/CustomComponents";
-  import {
-    Box,
-    Typography,
-  } from "@mui/material";
+  ButtonCustom,
+  CssTextField,
+  LinkGoBack,
+} from "../../Custom/CustomComponents";
+import { Grid, Box, Typography } from "@mui/material";
 
-
-
-const Checkout = ({
-    navigate,
-    handleChange,
-    handleSubmit,
-    errors,}) => {
-    
+const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
   return (
     <Box
       sx={{
@@ -67,7 +57,17 @@ const Checkout = ({
           >
             CHECKOUT
           </Typography>
-          <Box
+
+          <Typography
+            variant="h6"
+            color="primary.main"
+            sx={{alignSelf: "flex-start", marginBottom: "20px", marginTop: "30px",  }}
+          >
+            BILLING DETAILS
+          </Typography>
+          <Grid
+            container
+            gap={2}
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -75,7 +75,41 @@ const Checkout = ({
               width: "100%",
             }}
           >
-            <Box
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Name
+              </Typography>
+              <CssTextField
+                placeholder="Alexi Ward"
+                name="name"
+                onChange={handleChange}
+                error={errors.name ? true : false}
+                helperText={errors.name}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
               sx={{
                 width: "100%",
                 marginBottom: "20px",
@@ -103,9 +137,188 @@ const Checkout = ({
                 error={errors.email ? true : false}
                 helperText={errors.email}
               />
-            </Box>
-            
-          </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                width: "100%",
+                marginBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Phone Number
+              </Typography>
+              <CssTextField
+                placeholder="+1202-555-0136"
+                name="phone"
+                onChange={handleChange}
+                error={errors.phone ? true : false}
+                helperText={errors.phone}
+              />
+            </Grid>
+          </Grid>
+
+          <Typography
+            variant="h6"
+            color="primary.main"
+            sx={{alignSelf: "flex-start", marginBottom: "20px", marginTop: "30px",  }}
+          >
+            SHIPPING INFO
+          </Typography>
+          <Grid
+            container
+            gap={2}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Grid
+              item
+              xs={12}
+              sx={{
+                width: "100%",
+                marginBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Address
+              </Typography>
+              <CssTextField
+                placeholder="1137 Wiliams Avenue"
+                name="address"
+                onChange={handleChange}
+                error={errors.address ? true : false}
+                helperText={errors.address}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                width: "100%",
+                marginBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Zip Code
+              </Typography>
+              <CssTextField
+                placeholder="10001"
+                name="zipCode"
+                onChange={handleChange}
+                error={errors.zipCode ? true : false}
+                helperText={errors.zipCode}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                width: "100%",
+                marginBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                City
+              </Typography>
+              <CssTextField
+                placeholder="New York"
+                name="city"
+                onChange={handleChange}
+                error={errors.city ? true : false}
+                helperText={errors.city}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                width: "100%",
+                marginBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Country
+              </Typography>
+              <CssTextField
+                placeholder="United States"
+                name="country"
+                onChange={handleChange}
+                error={errors.country ? true : false}
+                helperText={errors.country}
+              />
+            </Grid>
+          </Grid>
+
+          
           <ButtonCustom
             sx={{ width: { xs: "100%", sm: "284px" } }}
             type="submit"
@@ -114,9 +327,8 @@ const Checkout = ({
           </ButtonCustom>
         </form>
       </Box>
-      
     </Box>
-  )
-}
+  );
+};
 
-export default Checkout
+export default Checkout;
