@@ -9,7 +9,7 @@ const Suggestions = ({ images, name }) => {
       <Box sx={{ width: "100%", height: {xs: "200px", md: "300px"} }}>
         <img
           className={styles.image}
-          src={images.desktop}
+          src={images}
           style={{ width: "100%", justifyContent: "center", height: "100%" }}
         />
       </Box>
