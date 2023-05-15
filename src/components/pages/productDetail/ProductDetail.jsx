@@ -111,12 +111,12 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             }}
           >
             <img
-              src={product.gallery.first.desktop}
+              src={product.gallery.first}
               alt="img"
               className={styles.imagenPrueba}
             />
             <img
-              src={product.gallery.second.desktop}
+              src={product.gallery.second}
               alt="img"
               className={styles.imagenPrueba}
             />
@@ -128,7 +128,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           >
             <img
               className={styles.imagenPrueba}
-              src={product.gallery.third.desktop}
+              src={product.gallery.third}
               alt="img"
               style={{ width: "100%" }}
             />
@@ -151,7 +151,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               gap: "50px",
-              marginTop: "50px"
+              marginTop: "50px",
             }}
           >
             <SuggestionsContainer
@@ -170,13 +170,13 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
         </Box>
 
         <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: "50px",
-          marginTop: "100px"
-        }}
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            gap: "50px",
+            marginTop: "100px",
+          }}
         >
           <MiniCategoryCardContainer
             images={product.categoryImage}
