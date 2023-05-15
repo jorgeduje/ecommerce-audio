@@ -12,7 +12,7 @@ const Home = () => {
           backgroundColor: "primary.second",
           backgroundImage: {
             xs: `url(${"https://res.cloudinary.com/dkwjizhdg/image/upload/v1682512392/e-commerce/headsphones_fqjywk.jpg"})`,
-            md: "none",
+            lg: "none",
           },
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -22,13 +22,14 @@ const Home = () => {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
+          padding: { lg: "0 10rem", md: "0 2.5rem" },
         }}
       >
         <Box
           sx={{
-            width: { xs: "80%", md: "40%" },
+            width: { xs: "100%", sm: "73%", lg:"40%" },
             display: "flex",
-            justifyContent: "center",
+            justifyContent: { xs: "center", lg: "flex-start" },
             height: "60vh",
             alignItems: "center",
           }}
@@ -36,24 +37,47 @@ const Home = () => {
           <Box
             sx={{
               width: "80%",
-              textAlign: { xs: "center", md: "left" },
+              textAlign: { xs: "center", lg: "left" },
             }}
           >
             <Typography
               variant="subtitle1"
               color="primary.third"
               className="subtitle1"
+              sx={{
+                mixBlendMode: "normal",
+                opacity: "0.5",
+                fontWeight: "400",
+                fontSize: "14px",
+                lineHeight: "19px",
+                letterSpacing: "10px",
+                textTransform: "uppercase",
+              }}
             >
               NEW PRODUCT
             </Typography>
             <Typography
-              sx={{ typography: { xs: "h4", md: "h2" } }}
+              sx={{
+                fontWeight: "700",
+                fontSize: {xs:"36px",sm:"51px"},
+                lineHeight: "58px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                margin: "24px 0px"
+              }}
               color="primary.fourth"
               className="h2Home"
             >
               XX99 Mark II Headphones
             </Typography>
-            <Typography variant="body2" color="primary.third" className="body2">
+            <Typography variant="body2" color="primary.third" className="body2" sx={{
+              mixBlendMode: "normal",
+              opacity: "0.75",
+              fontWeightt: "500",
+              fontSize: "15px",
+              lineHeight: "25px",
+              width: {xs:"100%",lg:"80%"},
+            }}>
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </Typography>
@@ -69,7 +93,7 @@ const Home = () => {
 
         <Box
           sx={{
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", lg: "block" },
             width: "60%",
           }}
         >
@@ -80,7 +104,7 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <ProductListContainer categoryName={categoryName}/>
+      <ProductListContainer categoryName={categoryName} />
     </div>
   );
 };
