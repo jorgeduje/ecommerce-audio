@@ -1,5 +1,5 @@
 import CartContainer from "../components/pages/Cart/CartContainer";
-import Checkout from "../components/pages/Checkout/Checkout";
+import CheckoutContainer from "../components/pages/Checkout/CheckoutContainer";
 import Home from "../components/pages/Home/Home";
 import LoginContainer from "../components/pages/Login/LoginContainer";
 import RegisterContainer from "../components/pages/Register/RegisterContainer";
@@ -39,6 +39,6 @@ export const menuRouter = [
   {
     id: "checkout",
     path: "/checkout",
-    Element: Checkout,
+    Element: CheckoutContainer,
   },
 ];
