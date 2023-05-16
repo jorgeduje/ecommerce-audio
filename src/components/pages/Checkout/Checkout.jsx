@@ -4,7 +4,7 @@ import {
   LinkGoBack,
 } from "../../Custom/CustomComponents";
 import { Grid, Box, Typography } from "@mui/material";
-import './checkout.css'
+import "./checkout.css";
 
 const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
   return (
@@ -62,18 +62,15 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
           <Typography
             variant="h6"
             color="primary.main"
-            sx={{alignSelf: "flex-start", marginBottom: "20px", marginTop: "30px",  }}
+            sx={{
+              alignSelf: "flex-start",
+              marginBottom: "20px",
+              marginTop: "30px",
+            }}
           >
             BILLING DETAILS
           </Typography>
-          <Grid
-            container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              border: "solid 2px red"
-            }}
-          >
+          <Grid container spacing={2}>
             <Grid
               item
               xs={12}
@@ -81,7 +78,6 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                border: "solid 2px blue",
               }}
             >
               <Typography
@@ -110,10 +106,9 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
               xs={12}
               sm={6}
               sx={{
-                marginBottom: "20px",
+                // marginBottom: "20px",
                 display: "flex",
                 flexDirection: "column",
-                border: "solid 2px blue",
               }}
             >
               <Typography
@@ -145,7 +140,6 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
                 marginBottom: "20px",
                 display: "flex",
                 flexDirection: "column",
-                border: "solid 2px blue",
               }}
             >
               <Typography
@@ -174,7 +168,11 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
           <Typography
             variant="h6"
             color="primary.main"
-            sx={{alignSelf: "flex-start", marginBottom: "20px", marginTop: "30px",  }}
+            sx={{
+              alignSelf: "flex-start",
+              marginBottom: "20px",
+              marginTop: "30px",
+            }}
           >
             SHIPPING INFO
           </Typography>
@@ -317,7 +315,6 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             </Grid>
           </Grid>
 
-          
           <ButtonCustom
             sx={{ width: { xs: "100%", sm: "284px" } }}
             type="submit"
