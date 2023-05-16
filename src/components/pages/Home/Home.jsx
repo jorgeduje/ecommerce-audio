@@ -139,30 +139,59 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: {xs: "column", sm: "row"},
-          alignItems: "center",
-          padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
-          marginTop: "120px",
-          justifyContent: "space-between",
-        }}
-      >
-        <MiniCategoryCardContainer
-          images={items?.[0]?.image}
-          category={items?.[0]?.category}
-        />
-        <MiniCategoryCardContainer
-          images={items?.[1]?.image}
-          category={items?.[1]?.category}
-        />
-        <MiniCategoryCardContainer
-          images={items?.[2]?.image}
-          category={items?.[2]?.category}
-        />
-      </Box>
+      {!categoryName && (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: "center",
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
+            marginTop: "120px",
+            justifyContent: "space-between",
+          }}
+        >
+          <MiniCategoryCardContainer
+            images={items?.[0]?.image}
+            category={items?.[0]?.category}
+          />
+          <MiniCategoryCardContainer
+            images={items?.[1]?.image}
+            category={items?.[1]?.category}
+          />
+          <MiniCategoryCardContainer
+            images={items?.[2]?.image}
+            category={items?.[2]?.category}
+          />
+        </Box>
+      )}
+      
       <ProductListContainer categoryName={categoryName} />
+
+      {categoryName && (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: "center",
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
+            marginTop: "120px",
+            justifyContent: "space-between",
+          }}
+        >
+          <MiniCategoryCardContainer
+            images={items?.[0]?.image}
+            category={items?.[0]?.category}
+          />
+          <MiniCategoryCardContainer
+            images={items?.[1]?.image}
+            category={items?.[1]?.category}
+          />
+          <MiniCategoryCardContainer
+            images={items?.[2]?.image}
+            category={items?.[2]?.category}
+          />
+        </Box>
+      )}
     </div>
   );
 };
