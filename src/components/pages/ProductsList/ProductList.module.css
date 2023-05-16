@@ -1,0 +1,15 @@
+.categoryContainer {
+    padding: 4rem 10rem;
+}
+
+@media (max-width:900px) {
+    .categoryContainer {
+        padding: 7.5rem 2.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .categoryContainer {
+        padding: 4rem 1.5rem;
+    }
+}

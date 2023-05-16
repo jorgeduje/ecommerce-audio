@@ -1,0 +1,33 @@
+.featuresContainer,
+.inTheBoxContainer {
+    opacity: 0.5;
+    text-align: left;
+}
+
+.imagenPrueba{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+.galleryContainer{
+    display: flex;
+    margin-top: 40px;
+    gap: 20px
+}
+.categoryContainer {
+    padding: 4rem 10rem;
+}
+@media (max-width:900px) {
+    .categoryContainer {
+        padding: 7.5rem 2.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .categoryContainer {
+        padding: 4rem 1.5rem;
+    }
+}
