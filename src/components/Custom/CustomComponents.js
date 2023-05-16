@@ -36,27 +36,6 @@ export const ButtonCustom = styled(Button)(({ theme }) => ({
   },
 }));
 
-//Button pequeño orange (naranja)
-export const ButtonCustom4 = styled(Button)(({ theme }) => ({
-  width: "160px",
-  height: "48px",
-  backgroundColor: theme.palette.primary.main,
-  border: "none",
-  borderRadius: "0",
-  color: theme.palette.secondary.second,
-  fontFamily: "'Manrope'",
-  fontWeight: "700",
-  fontSize: "13px",
-  lineHeight: "19px",
-  textAlign: "center",
-  letterSpacing: "1px",
-  textTransform: "uppercase",
-  cursor: "pointer",
-  "&:hover": {
-    backgroundColor: theme.palette.secondary.main,
-  },
-}));
-
 //Button black (negro)
 export const ButtonCustom2 = styled(Button)(({ theme }) => ({
   width: "284px",

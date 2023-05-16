@@ -32,7 +32,7 @@ const ProductCard = ({ product, index, show, onAdd }) => {
           <CardMedia
             className={styles.imgContainer}
             component="img"
-            image={product.image.desktop}
+            image={product.image}
             alt="img"
           />
         )}
@@ -41,7 +41,7 @@ const ProductCard = ({ product, index, show, onAdd }) => {
           <CardMedia
             className={styles.imgContainer}
             component="img"
-            image={product.image.tablet}
+            image={product.image}
             alt="green iguana"
           />
         )}
@@ -50,7 +50,7 @@ const ProductCard = ({ product, index, show, onAdd }) => {
           <CardMedia
             className={styles.imgContainer}
             component="img"
-            image={product.image.mobile}
+            image={product.image}
             alt={product.name}
           />
         )}

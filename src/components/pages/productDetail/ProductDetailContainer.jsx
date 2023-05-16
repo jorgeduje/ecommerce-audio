@@ -12,6 +12,18 @@ const ProductDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
+  const [open, setOpen] = useState(false);
+
+ 
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,7 +44,7 @@ const ProductDetailContainer = () => {
       quantity: cantidad,
     };
     dispatch(addToCart(obj));
-    
+    setOpen(true);
   };
 
   return (
@@ -40,7 +52,12 @@ const ProductDetailContainer = () => {
       {!product ? (
         <Loading />
       ) : (
-        <ProductDetail onAdd={onAdd} product={product} />
+        <ProductDetail
+          onAdd={onAdd}
+          product={product}
+          open={open}
+          handleClose={handleClose}
+        />
       )}
     </div>
   );
