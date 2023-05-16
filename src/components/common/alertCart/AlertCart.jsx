@@ -1,27 +1,31 @@
-import { Alert, Box, Button, Snackbar, Typography } from "@mui/material";
+import { Alert, Box,  Snackbar, Typography } from "@mui/material";
 
-const AlertCart = ({ open, handleClick, handleClose, lastElement }) => {
+const AlertCart = ({ open,  handleClose, product }) => {
   return (
-    <div>
-      <Button variant="contained" onClick={handleClick}>
-        Mostrar alerta
-      </Button>
-      <Snackbar
-        open={open}
-        autoHideDuration={3000}
+    <Snackbar
+      open={open}
+      autoHideDuration={3000}
+      onClose={handleClose}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+    >
+      <Alert
         onClose={handleClose}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        severity="success"
+        sx={{ width: "100%", display: "flex", alignItems: "center" }}
+        color="warning"
       >
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%",display: "flex", alignItems: "center" }} color="warning">
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box sx={{ mr: 2 }}>
-                <Typography sx={{ color: "primary.main" }}>Producto agregado correctamente</Typography>
-                <Typography sx={{ color: "primary.main" }}>{lastElement.name} x{lastElement.quantity}</Typography>
-            </Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{ mr: 2 }}>
+            <Typography sx={{ color: "primary.main" }}>
+              Producto agregado correctamente
+            </Typography>
+            <Typography sx={{ color: "primary.main" }}>
+              {product.name}
+            </Typography>
           </Box>
-        </Alert>
-      </Snackbar>
-    </div>
+        </Box>
+      </Alert>
+    </Snackbar>
   );
 };
 
