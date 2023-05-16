@@ -6,7 +6,6 @@ import SuggestionsContainer from "../../common/suggestions/SuggestionsContainer"
 import MiniCategoryCardContainer from "../../common/miniCategoryCard/MiniCategoryCardContainer";
 
 const ProductDetail = ({ product, onAdd, open, handleClose }) => {
-  console.log(product);
 
   return (
     <div className={styles.categoryContainer}>
