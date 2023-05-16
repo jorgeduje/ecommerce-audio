@@ -1,5 +1,4 @@
 import {
-  ButtonCustom,
   CssTextField,
   LinkGoBack,
 } from "../../Custom/CustomComponents";
@@ -19,6 +18,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        flexGrow: 1
       }}
     >
       <Box
@@ -40,7 +40,6 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             sm: "80%",
             md: "600px",
           },
-          height: "500px",
         }}
       >
         <form className="formContainer" onSubmit={handleSubmit}>
@@ -177,14 +176,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             SHIPPING INFO
           </Typography>
           <Grid
-            container
-            gap={2}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              width: "100%",
-            }}
+            container spacing={2}
           >
             <Grid
               item
@@ -314,13 +306,31 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
               />
             </Grid>
           </Grid>
-
-          <ButtonCustom
-            sx={{ width: { xs: "100%", sm: "284px" } }}
-            type="submit"
+          <Typography
+            variant="h6"
+            color="primary.main"
+            sx={{
+              alignSelf: "flex-start",
+              marginBottom: "20px",
+              marginTop: "30px",
+            }}
           >
-            Continue
-          </ButtonCustom>
+            PAYMENT DETAILS
+          </Typography>
+          <Typography
+                sx={{
+                  marginBottom: "9px",
+                  fontFamily: "Manrope",
+                  fontStyle: "normal",
+                  fontWeight: "700",
+                  fontSize: "12px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.214286px",
+                }}
+              >
+                Payment Method
+              </Typography>
+          
         </form>
       </Box>
     </Box>
