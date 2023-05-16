@@ -14,14 +14,12 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-// import { login } from "../../../store/auth/authSlice";
 
 const Login = ({
   showPassword,
   navigate,
   handleClickShowPassword,
   handleMouseDownPassword,
-  values,
   handleChange,
   handleSubmit,
   errors,
