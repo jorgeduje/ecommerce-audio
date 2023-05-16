@@ -4,6 +4,7 @@ import {
   LinkGoBack,
 } from "../../Custom/CustomComponents";
 import { Grid, Box, Typography } from "@mui/material";
+import './checkout.css'
 
 const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
   return (
@@ -42,7 +43,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
           height: "500px",
         }}
       >
-        <form className="cajaLogin" onSubmit={handleSubmit}>
+        <form className="formContainer" onSubmit={handleSubmit}>
           <Typography
             variant="h1"
             color="secondary.third"
@@ -67,22 +68,20 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
           </Typography>
           <Grid
             container
-            gap={2}
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              width: "100%",
+              border: "solid 2px red"
             }}
           >
             <Grid
               item
               xs={12}
-              md={6}
+              sm={6}
               sx={{
-                width: "100%",
                 display: "flex",
                 flexDirection: "column",
+                border: "solid 2px blue",
               }}
             >
               <Typography
@@ -109,12 +108,12 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             <Grid
               item
               xs={12}
-              md={6}
+              sm={6}
               sx={{
-                width: "100%",
                 marginBottom: "20px",
                 display: "flex",
                 flexDirection: "column",
+                border: "solid 2px blue",
               }}
             >
               <Typography
@@ -141,12 +140,12 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             <Grid
               item
               xs={12}
-              md={6}
+              sm={6}
               sx={{
-                width: "100%",
                 marginBottom: "20px",
                 display: "flex",
                 flexDirection: "column",
+                border: "solid 2px blue",
               }}
             >
               <Typography
