@@ -1,9 +1,10 @@
-import MiniCategoryCard from "./miniCategoryCard"
+import MiniCategoryCard from "./MiniCategoryCard"
 
 
-const MiniCategoryCardContainer = ({images, category}) => {
+
+const MiniCategoryCardContainer = ({images, category, }) => {
   return (
-    <MiniCategoryCard images={images} category={category}/>
+    <MiniCategoryCard images={images} category={category} />
   )
 }
 
