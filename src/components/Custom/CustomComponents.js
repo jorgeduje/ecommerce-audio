@@ -82,6 +82,28 @@ export const ButtonCustom3 = styled(Button)(({ theme }) => ({
   },
 }));
 
+//Button black (negro) pero lo contrario al button2
+export const ButtonCustom4 = styled(Button)(({ theme }) => ({
+  width: "284px",
+  height: "48px",
+  backgroundColor: theme.palette.secondary.third,
+  border: `2px solid ${theme.palette.secondary.third}`,
+  borderRadius: "0",
+  color: theme.palette.secondary.second,
+  fontFamily: "'Manrope'",
+  fontWeight: "700",
+  fontSize: "13px",
+  lineHeight: "18px",
+  textAlign: "center",
+  letterSpacing: "1px",
+  textTransform: "uppercase",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: theme.palette.secondary.second,
+    color: theme.palette.secondary.third
+  },
+}));
+
 //TextField
 
 export const CssTextField = styled(TextField)(({ theme }) => ({

@@ -5,7 +5,10 @@ import Loading from "../../common/loading/Loading";
 import { getAllProducts } from "../../../services/products";
 import { useEffect, useState } from "react";
 import MiniCategoryCardContainer from "../../common/miniCategoryCard/MiniCategoryCardContainer";
-// import { ButtonCustom } from "../../Custom/CustomComponents";
+// // import { ButtonCustom } from "../../Custom/CustomComponents";
+import imageSpeakerZx9 from "../../../assets/home/desktop/image-speaker-zx9.png";
+import { CardMedia } from "@mui/material";
+import { ButtonCustom4 } from "../../Custom/CustomComponents";
 const Home = () => {
   const { categoryName } = useParams();
   const [items, setItems] = useState([]);
@@ -140,31 +143,158 @@ const Home = () => {
         </Box>
       </Box>
       {!categoryName && (
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            alignItems: "center",
-            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
-            marginTop: "120px",
-            justifyContent: "space-between",
-          }}
-        >
-          <MiniCategoryCardContainer
-            images={items?.[0]?.image}
-            category={items?.[0]?.category}
-          />
-          <MiniCategoryCardContainer
-            images={items?.[1]?.image}
-            category={items?.[1]?.category}
-          />
-          <MiniCategoryCardContainer
-            images={items?.[2]?.image}
-            category={items?.[2]?.category}
-          />
-        </Box>
+        <>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: "center",
+              padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
+              marginTop: "120px",
+              justifyContent: "space-between",
+            }}
+          >
+            <MiniCategoryCardContainer
+              images={items?.[0]?.image}
+              category={items?.[0]?.category}
+            />
+            <MiniCategoryCardContainer
+              images={items?.[1]?.image}
+              category={items?.[1]?.category}
+            />
+            <MiniCategoryCardContainer
+              images={items?.[2]?.image}
+              category={items?.[2]?.category}
+            />
+          </Box>
+          <Box
+            sx={{
+              // backgroundColor: "primary.main",
+              width: "100%",
+              height: {md:"560px", xs: "720px"},
+              padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
+            }}
+          >
+            <Box
+              sx={{
+                backgroundColor: "primary.main",
+                // backgroundImage: `url(${imageSpeakerZx9})` /*url de assets*/,
+                // backgroundRepeat: "no-repeat",
+                // backgroundPosition: "160px 104px",
+                // backgroundSize: "370px 470px",
+                width: "100%",
+                height: {md:"560px", xs: "720px"},
+                borderRadius: "8px",
+                position: "relative",
+                overflow: "hidden",
+                display: "flex",
+                justifyContent: {md:"center", xs: "flex-end"},
+                alignItems: {md:"flex-end", xs: "center"},
+                flexDirection: "column",
+              }}
+            >
+              <CardMedia
+                sx={{
+                  height: {lg: "460px", md:"390px", xs:"237px"},
+                  position: "absolute",
+                  top: {lg: "344px", md:"375px", xs:"160px"},
+                  width: {lg: "380px", md:"319px",xs:"197.21px"},
+                  left: {lg:"344px", md:"200px",xs:"50%"},
+                  transform: "translate(-50%, -50%)",
+                  zIndex: "40",
+                }}
+                image={imageSpeakerZx9}
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: {md:"412px",xs: "184px"},
+                  left: {md:"365px", xs: "50%"},
+                  transform: "translate(-50%, -50%)",
+                  width: "944px",
+                  height: "944px",
+                  borderRadius: "50%",
+                  border: "1px solid #FFFFFF",
+                  opacity: "0.2",
+                  pointerEvents: "none",
+                  boxSizing: "border-box",
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: {md:"419px", xs: "184px"},
+                  left: {md: "343px", xs: "50%"},
+                  transform: "translate(-50%, -50%)",
+                  width: "542px",
+                  height: "542px",
+                  borderRadius: "50%",
+                  border: "1px solid #FFFFFF",
+                  pointerEvents: "none",
+                  boxSizing: "border-box",
+                  opacity: "0.2",
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: {md:"419px", xs: "183px"},
+                  left: {md: "343px", xs: "50%"},
+                  transform: "translate(-50%, -50%)",
+                  width: "472px",
+                  height: "472px",
+                  borderRadius: "50%",
+                  border: "1px solid #FFFFFF",
+                  pointerEvents: "none",
+                  boxSizing: "border-box",
+                  opacity: "0.2",
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  width: {sm:"349px", xs: "304px"},
+                  zIndex: "100",
+                  height: "303px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  alignItems: {xs:"center", md: "flex-start"},
+                  marginBottom: "64px"
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontWeight: "700",
+                    fontSize: "56px",
+                    lineHeight: "58px",
+                    letterSpacing: "2px",
+                    textAlign: {xs: "center", md: "start"},
+                    color: "secondary.second"
+                  }}
+                >
+                  ZX9 SPEAKER
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: "500",
+                    fontSize: "15px",
+                    lineHeight: "25px",
+                    mixBlendMode: "normal",
+                    opacity: "0.75",
+                    textAlign: {xs: "center", md: "start"},
+                    color: "secondary.second"
+                  }}
+                >
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound.
+                </Typography>
+                <ButtonCustom4 sx={{textTransform: "uppercase", width: "160px", }}>See Product</ButtonCustom4>
+              </Box>
+            </Box>
+          </Box>
+        </>
       )}
-      
+
       <ProductListContainer categoryName={categoryName} />
 
       {categoryName && (

@@ -8,7 +8,7 @@ const MiniCategoryCard = ({ images, category }) => {
     <Box
       component="div"
       className={styles.boxImage}
-      sx={{ width: { xs: "100%", sm: "31%" }, marginBottom: "68px" }}
+      sx={{ width: { xs: "100%", sm: "31%" } }}
     >
       <img className={styles.image} src={images}></img>
       <Typography
