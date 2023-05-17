@@ -1,11 +1,11 @@
-import {
-  CssTextField,
-  LinkGoBack,
-} from "../../Custom/CustomComponents";
+import { CssTextField, LinkGoBack } from "../../Custom/CustomComponents";
 import { Grid, Box, Typography } from "@mui/material";
 import "./checkout.css";
+import { useSelector } from "react-redux";
 
 const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
+  const { cart, total } = useSelector((store) => store.cartSlice);
+
   return (
     <Box
       sx={{
@@ -18,7 +18,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        flexGrow: 1
+        flexGrow: 1,
       }}
     >
       <Box
@@ -175,9 +175,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
           >
             SHIPPING INFO
           </Typography>
-          <Grid
-            container spacing={2}
-          >
+          <Grid container spacing={2}>
             <Grid
               item
               xs={12}
@@ -318,20 +316,95 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors }) => {
             PAYMENT DETAILS
           </Typography>
           <Typography
+            sx={{
+              marginBottom: "9px",
+              fontFamily: "Manrope",
+              fontStyle: "normal",
+              fontWeight: "700",
+              fontSize: "12px",
+              lineHeight: "16px",
+              letterSpacing: "-0.214286px",
+            }}
+          >
+            Payment Method
+          </Typography>
+        </form>
+      </Box>
+
+      {/* ACA EMPIEZA EL CART */}
+      <Box>
+        <>
+          <Box
+            sx={{
+              maxHeight: "240px",
+              overflow: "auto",
+              margin: "32px 0px 8px 0px",
+              scrollbarWidth: "1px",
+              scrollbarColor: "gray gray",
+              "&::-webkit-scrollbar": {
+                width: "1px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "gray",
+              },
+            }}
+          >
+            {cart.map((e) => (
+              <Box
+                key={e.id}
                 sx={{
-                  marginBottom: "9px",
-                  fontFamily: "Manrope",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  fontSize: "12px",
-                  lineHeight: "16px",
-                  letterSpacing: "-0.214286px",
+                  display: "flex",
+                  width: "284px",
+                  height: "64px",
+                  marginBottom: "24px",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                 }}
               >
-                Payment Method
-              </Typography>
-          
-        </form>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontWeight: "700",
+                      fontSize: "15px",
+                      lineHeight: "25px",
+                    }}
+                  >
+                    {e.name.split(" ")[0]}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      mixBlendMode: "normal",
+                      opacity: "0.5",
+                      fontWeight: "700",
+                      fontSize: "14px",
+                      lineHeight: "25px",
+                    }}
+                  >{`$${e.unit_price}`}</Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              width: "284px",
+              justifyContent: "space-between",
+              marginBottom: "24px",
+            }}
+          >
+            <Typography
+              sx={{
+                mixBlendMode: "normal",
+                opacity: "0.5",
+                textTransform: "uppercase",
+                fontWeight: "500",
+              }}
+            >
+              total
+            </Typography>
+            <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
+          </Box>
+        </>
       </Box>
     </Box>
   );
