@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const CartModalContainer = ({ open, handleClose }) => {
   const { cart, items, total } = useSelector((store) => store.cartSlice);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
