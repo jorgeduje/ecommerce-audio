@@ -131,7 +131,7 @@ const CartModal = ({
                           fontSize: "14px",
                           lineHeight: "25px",
                         }}
-                      >{`$${e.price}`}</Typography>
+                      >{`$${e.unit_price}`}</Typography>
                     </Box>
                   </Box>
 
