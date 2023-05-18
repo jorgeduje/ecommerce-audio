@@ -1,5 +1,4 @@
-import CartContainer from "../components/pages/Cart/CartContainer";
-import Checkout from "../components/pages/Checkout/Checkout";
+import CheckoutContainer from "../components/pages/Checkout/CheckoutContainer";
 import Home from "../components/pages/Home/Home";
 import LoginContainer from "../components/pages/Login/LoginContainer";
 import RegisterContainer from "../components/pages/Register/RegisterContainer";
@@ -32,13 +31,8 @@ export const menuRouter = [
     Element: ProductDetailContainer,
   },
   {
-    id: "cart",
-    path: "/cart",
-    Element: CartContainer,
-  },
-  {
     id: "checkout",
     path: "/checkout",
-    Element: Checkout,
+    Element: CheckoutContainer,
   },
 ];

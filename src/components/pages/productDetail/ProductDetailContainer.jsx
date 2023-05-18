@@ -40,8 +40,9 @@ const ProductDetailContainer = () => {
     let obj = {
       id: product.id,
       name: product.name,
-      price: product.price,
+      unit_price: product.price,
       quantity: cantidad,
+      image: product.image
     };
     dispatch(addToCart(obj));
     setOpen(true);

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import CartModal from "./cartModal";
+import CartModal from "./CartModal";
 import { useEffect } from "react";
 import {
   clearCart,
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const CartModalContainer = ({ open, handleClose }) => {
   const { cart, items, total } = useSelector((store) => store.cartSlice);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

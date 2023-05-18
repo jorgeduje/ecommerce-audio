@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CheckoutModal from "./checkoutModal";
+import CheckoutModal from "./CheckoutModal";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

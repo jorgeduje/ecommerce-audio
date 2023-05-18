@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const CheckoutContainer = () => {
-    const { handleSubmit, handleChange, errors } = useFormik({
+    const { handleSubmit, handleChange, errors, values } = useFormik({
         initialValues: {
           name: "",  
           email: "",
@@ -13,18 +13,12 @@ const CheckoutContainer = () => {
           zipCode: "",
           city: "",
           country: "",
+          paymentMethod: "",
+          eMoneyNumber: "",
+          eMoneyPin: ""
         },
         onSubmit: (data) => {
-          const userData = {
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            address: data.address,
-            zipCode: data.zipCode,
-            city: data.city,
-            country: data.country,
-          };
-          console.log(userData);
+          console.log(data);
         },
         validationSchema: Yup.object().shape({
           name:   Yup.string().required("Este es campo es obligatorio"),
@@ -36,7 +30,9 @@ const CheckoutContainer = () => {
           zipCode: Yup.string().required("Este es campo es obligatorio"),
           city: Yup.string().required("Este es campo es obligatorio"),
           country: Yup.string().required("Este es campo es obligatorio"),
-            
+          paymentMethod: Yup.string().required("Este es campo es obligatorio"),
+          eMoneyNumber: Yup.number().required("Este es campo es obligatorio"),
+          eMoneyPin: Yup.number().required("Este es campo es obligatorio"),
         }),
         validateOnChange: false,
       });
@@ -49,6 +45,7 @@ const CheckoutContainer = () => {
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           errors={errors}
+          values={values}
         />
       );
 }

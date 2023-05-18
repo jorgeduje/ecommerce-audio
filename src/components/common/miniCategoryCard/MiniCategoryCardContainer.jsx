@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { menu } from "../../../Router/navigation";
-import MiniCategoryCard from "./MiniCategoryCard"
+import MiniCategoryCard from "./MiniCategoryCard";
 
 
 
@@ -18,4 +18,4 @@ const MiniCategoryCardContainer = ({images, category, }) => {
   )
 }
 
-export default MiniCategoryCardContainer
+export default MiniCategoryCardContainer;
