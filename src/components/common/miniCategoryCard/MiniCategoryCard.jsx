@@ -3,7 +3,7 @@ import styles from "./MiniCategoryCard.module.css";
 import { Typography } from "@mui/material";
 import { ButtonCustom3 } from "../../Custom/CustomComponents";
 
-const MiniCategoryCard = ({ images, category }) => {
+const MiniCategoryCard = ({ images, category, linkearCategoria }) => {
   return (
     <Box
       component="div"
@@ -23,7 +23,7 @@ const MiniCategoryCard = ({ images, category }) => {
       >
         {category?.toUpperCase()}
       </Typography>
-      <ButtonCustom3 sx={{ marginBottom: "30px" }}>
+      <ButtonCustom3 sx={{ marginBottom: "30px", width: "50px" }} onClick={linkearCategoria} >
         SHOP <span style={{ color: "#D87D4A" }}>{">"}</span>
       </ButtonCustom3>
     </Box>

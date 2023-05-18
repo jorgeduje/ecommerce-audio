@@ -40,7 +40,7 @@ export const ButtonCustom = styled(Button)(({ theme }) => ({
 export const ButtonCustom2 = styled(Button)(({ theme }) => ({
   width: "284px",
   height: "48px",
-  backgroundColor: theme.palette.secondary.second,
+  backgroundColor: "transparent",
   border: `2px solid ${theme.palette.secondary.third}`,
   borderRadius: "0",
   color: theme.palette.secondary.third,
@@ -87,7 +87,7 @@ export const ButtonCustom4 = styled(Button)(({ theme }) => ({
   width: "284px",
   height: "48px",
   backgroundColor: theme.palette.secondary.third,
-  border: `2px solid ${theme.palette.secondary.third}`,
+  // border: `2px solid ${theme.palette.secondary.third}`,
   borderRadius: "0",
   color: theme.palette.secondary.second,
   fontFamily: "'Manrope'",
@@ -99,8 +99,7 @@ export const ButtonCustom4 = styled(Button)(({ theme }) => ({
   textTransform: "uppercase",
   cursor: "pointer",
   "&:hover": {
-    backgroundColor: theme.palette.secondary.second,
-    color: theme.palette.secondary.third
+    backgroundColor: "#4C4C4C",
   },
 }));
 
