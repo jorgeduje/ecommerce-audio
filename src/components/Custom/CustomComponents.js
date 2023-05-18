@@ -40,7 +40,7 @@ export const ButtonCustom = styled(Button)(({ theme }) => ({
 export const ButtonCustom2 = styled(Button)(({ theme }) => ({
   width: "284px",
   height: "48px",
-  backgroundColor: theme.palette.secondary.second,
+  backgroundColor: "transparent",
   border: `2px solid ${theme.palette.secondary.third}`,
   borderRadius: "0",
   color: theme.palette.secondary.third,
@@ -79,6 +79,27 @@ export const ButtonCustom3 = styled(Button)(({ theme }) => ({
   "&:hover": {
     backgroundColor: "transparent",
     color: theme.palette.primary.main
+  },
+}));
+
+//Button black (negro) pero lo contrario al button2
+export const ButtonCustom4 = styled(Button)(({ theme }) => ({
+  width: "284px",
+  height: "48px",
+  backgroundColor: theme.palette.secondary.third,
+  // border: `2px solid ${theme.palette.secondary.third}`,
+  borderRadius: "0",
+  color: theme.palette.secondary.second,
+  fontFamily: "'Manrope'",
+  fontWeight: "700",
+  fontSize: "13px",
+  lineHeight: "18px",
+  textAlign: "center",
+  letterSpacing: "1px",
+  textTransform: "uppercase",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: "#4C4C4C",
   },
 }));
 
