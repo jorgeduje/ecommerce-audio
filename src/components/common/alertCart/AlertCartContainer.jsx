@@ -1,5 +1,5 @@
 
-import AlertCart from "./alertCart";
+import AlertCart from "./AlertCart";
 
 
 const AlertCartContainer = ({product, open,  handleClose}) => {

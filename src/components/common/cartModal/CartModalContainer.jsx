@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import CartModal from "./cartModal";
+import CartModal from "./CartModal";
 import { useEffect } from "react";
 import {
   clearCart,
