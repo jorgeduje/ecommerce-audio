@@ -2,13 +2,12 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import Register from "./Register";
 import { useNavigate } from "react-router";
-
 import * as Yup from "yup";
 
 const RegisterContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();

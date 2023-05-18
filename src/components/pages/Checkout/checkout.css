@@ -1,7 +1,41 @@
 .formContainer {
-  background-color: #ffffff;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
+  margin-left: 160px;
   padding: 30px;
 }
+
+.gridContainer{
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+}
+.radioGroup{
+  gap: 15px;
+}
+
+.formControlLabelOption{
+  border: 2px solid #D87D4A ;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 60px;
+  letter-spacing: -0.25px;
+  padding: 18px 24px;
+  outline: none;
+  width: "100%";
+
+}
+
+.productImg{
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+}
+
+.errors{
+  font-size: 9px;
+  color: red;
+}
+
+
