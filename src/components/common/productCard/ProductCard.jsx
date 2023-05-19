@@ -11,6 +11,7 @@ import { Box } from "@mui/material";
 const ProductCard = ({ product, index, show, onAdd }) => {
   // const size = useWindowSize();
 
+
   let isPair = index % 2 === 0;
 
   return (
@@ -20,10 +21,10 @@ const ProductCard = ({ product, index, show, onAdd }) => {
         sx={{
           width: "100%",
           display: "flex",
-          paddingLeft: { lg: "10rem", md: "7.5rem", xs: "1.5rem" },
-          paddingRight: { lg: "10rem", md: "7.5rem", xs: "1.5rem" },
-          paddingTop: { lg: "10rem", xs: "7.5rem" },
-          flexDirection: { md: isPair ? "row" : "row-reverse", xs: "column" },
+          paddingLeft: show ? { lg: "10rem", md: "7.5rem", xs: "1.5rem" } : { lg: "10rem", md: "2.5rem", xs: "1.5rem" },
+          paddingRight: show ?{ lg: "10rem", md: "7.5rem", xs: "1.5rem" } : { lg: "10rem", md: "2.5rem", xs: "1.5rem" },
+          paddingTop: show ? { lg: "10rem", xs: "7.5rem" } : { md: "3rem", xs: "1.5rem" },
+          flexDirection: show ? { md: isPair ? "row" : "row-reverse", xs: "column" } : {sm: "row", xs: "column" },
           boxShadow: "none",
           alignItems: "center",
           justifyContent: "space-between",
@@ -31,8 +32,8 @@ const ProductCard = ({ product, index, show, onAdd }) => {
       >
         <Box
           sx={{
-            height: { lg: "560px", md: "530px", xs: "352px" },
-            width: { lg: "47.5%", md: "42.5%", xs: "100%" },
+            height: show ? { lg: "560px", md: "530px", xs: "352px" } : { lg: "560px", md: "530px", sm: "480px", xs: "352px" },
+            width: show ? { lg: "47.5%", md: "42.5%", xs: "100%" } : { lg: "47.5%", md: "42.5%", sm: "35%", xs: "100%" },
             backgroundImage: `url(${product.image})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -42,30 +43,34 @@ const ProductCard = ({ product, index, show, onAdd }) => {
         ></Box>
         <Box
           sx={{
-            height: { md: "343px", sm: "302px", xs: "300px" },
-            width: { lg: "445px", md: "343px", sm: "572px", xs: "100%" },
+            height: show ? { md: "343px", sm: "302px", xs: "300px" } : { md: "343px", sm: "380px", xs: "360px" },
+            width: show ? { lg: "445px", md: "343px", sm: "572px", xs: "100%" } : { lg: "445px", md: "443px", sm: "60%", xs: "100%" },
             display: "flex",
-            marginTop: { md: "0px", xs: "52px" },
+            marginTop: show ? { md: "0px", xs: "52px" } : { sm: "0px", xs: "52px" },
             flexDirection: "column",
-            alignItems: { md: "start", xs: "center" },
+            alignItems: show ? { md: "start", xs: "center" } : { xs: "start" },
             justifyContent: "space-between",
           }}
         >
           <Typography
             sx={{
               fontWeight: "700",
-              fontSize: {sm:"40px", xs: "28px"},
+              fontSize: { sm: "40px", xs: "28px" },
               lineHeight: "44px",
               letterSpacing: "1.42857px",
               textTransform: "uppercase",
-              textAlign: { md: "start", xs: "center" },
+              textAlign: show ? { md: "start", xs: "center" } : {  xs: "start" },
             }}
           >
             {product.name}
           </Typography>
           <Typography
             sx={{
-              textAlign: { md: "start", xs: "center" },
+              textAlign: show ? { md: "start", xs: "center" } : {  xs: "start" },
+              fontWeight: "500",
+              fontSize: "15px",
+              lineHeight: "25px",
+              opacity: "0.5",
             }}
           >
             {product.description}
@@ -86,7 +91,18 @@ const ProductCard = ({ product, index, show, onAdd }) => {
             </Link>
           ) : (
             <>
-              <Typography variant="h3">$ {product.price}</Typography>{" "}
+              <Typography
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  textTransform: "uppercase",
+                  width: "100%",
+                  textAlign: { xs: "start" },
+                }}
+              >
+                $ {product.price}
+              </Typography>{" "}
               <ContadorContainer onAdd={onAdd} />{" "}
             </>
           )}
