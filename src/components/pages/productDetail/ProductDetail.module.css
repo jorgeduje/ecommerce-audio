@@ -18,7 +18,7 @@
     gap: 20px
 }
 .categoryContainer {
-    padding: 4rem 10rem;
+    /* padding: 4rem 10rem; */
 }
 @media (max-width:900px) {
     .categoryContainer {

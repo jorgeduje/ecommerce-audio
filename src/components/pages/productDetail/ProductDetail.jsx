@@ -4,11 +4,11 @@ import styles from "./ProductDetail.module.css";
 import AlertCartContainer from "../../common/alertCart/AlertCartContainer";
 import SuggestionsContainer from "../../common/suggestions/SuggestionsContainer";
 import MiniCategoryCardContainer from "../../common/miniCategoryCard/MiniCategoryCardContainer";
+import { LinkGoBack } from "../../Custom/CustomComponents";
 
 const ProductDetail = ({ product, onAdd, open, handleClose }) => {
-
   return (
-    <div className={styles.categoryContainer}>
+    <Box sx={{ padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" } }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
@@ -17,6 +17,9 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           open={open}
           handleClose={handleClose}
         />
+        <Box sx={{width: "100%", marginTop: "79px"}}>
+          <LinkGoBack sx={{}}>Go Back</LinkGoBack>
+        </Box>
         <div>
           <ProductCardContainer product={product} onAdd={onAdd} show={false} />
         </div>
@@ -191,7 +194,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           />
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 export default ProductDetail;
