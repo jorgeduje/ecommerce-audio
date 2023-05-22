@@ -1,6 +1,7 @@
 import ProductCard from './ProductCard'
 import Loading from '../loading/Loading'
 
+
 const ProductCardContainer = ({product, index, show, onAdd}) => {
   if(!product){
     return <Loading />

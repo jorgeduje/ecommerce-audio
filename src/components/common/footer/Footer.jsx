@@ -9,10 +9,14 @@ import { Link } from "react-router-dom";
 import { menu } from "../../../Router/navigation";
 import { useWindowSize } from "../../../utils/useWindowSize";
 
-const Footer = ({ navigate}) => {
+const Footer = ({ navigate }) => {
   const size = useWindowSize();
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+      }}
+    >
       <AppBar className={styles.footerContainer} position="relative">
         <Toolbar className={styles.bar}>
           <img
