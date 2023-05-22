@@ -65,7 +65,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div style={{ paddingBottom: "30px" }}>
       {!categoryName && (
         <>
           <Box

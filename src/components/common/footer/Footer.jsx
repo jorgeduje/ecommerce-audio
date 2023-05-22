@@ -15,7 +15,6 @@ const Footer = ({ navigate }) => {
     <Box
       sx={{
         flexGrow: 1,
-        marginTop: { lg: "10rem", md: "2.5rem", xs: "1.5rem" },
       }}
     >
       <AppBar className={styles.footerContainer} position="relative">
