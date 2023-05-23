@@ -1,0 +1,30 @@
+.image {
+    position: absolute;
+    width: 170px;
+    height: 127.55;
+    right: calc(50% - 170px/2) ;
+    top: calc(-127.55px/2);
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.boxImage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 204px;
+    background-color: #F1F1F1;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 60px;
+}
+
+@media (max-width:600px) {
+    .boxImage {
+        height: 160px;
+    }
+    .image{
+        top: calc(-177.55px/2);
+    }
+}
