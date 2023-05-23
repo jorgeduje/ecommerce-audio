@@ -98,21 +98,34 @@ const CartModal = ({
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <IconButton
-                      onClick={() => deleteById(e.id)}
+                    <Box
                       sx={{
-                        width: "64px",
-                        height: "64px",
-                        display: "flex",
-                        justifyContent: "flex-start",
+                        backgroundImage:`url(${e.image})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        marginRight: "10px",
                         "&:hover": {
-                          backgroundColor: "white",
+                          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${e.image})`,
                         },
                       }}
                     >
-                      <DeleteIcon sx={{ fontSize: "30px" }} />
-                    </IconButton>
-                    {/* <button onClick={() => deleteById(e.id)}>delete</button> */}
+                      <IconButton
+                        onClick={() => deleteById(e.id)}
+                        sx={{
+                          width: "64px",
+                          height: "64px",
+                          display: "flex",
+                          justifyContent: "center",
+                          borderRadius: "0%",
+                          opacity: "0",
+                          "&:hover": {
+                            opacity: "1",
+                          },
+                        }}
+                      >
+                        <DeleteIcon sx={{ fontSize: "30px", color: "primary.main" }} />
+                      </IconButton>
+                    </Box>
                     <Box>
                       <Typography
                         sx={{
@@ -162,7 +175,9 @@ const CartModal = ({
               </Typography>
               <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
             </Box>
-            <ButtonCustom onClick={()=>navigate("/checkout")}>checkout</ButtonCustom>
+            <ButtonCustom onClick={() => navigate("/checkout")}>
+              checkout
+            </ButtonCustom>
           </>
         ) : (
           <Typography>no tenes nada agregado</Typography>

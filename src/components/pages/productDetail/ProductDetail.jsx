@@ -4,11 +4,11 @@ import styles from "./ProductDetail.module.css";
 import AlertCartContainer from "../../common/alertCart/AlertCartContainer";
 import SuggestionsContainer from "../../common/suggestions/SuggestionsContainer";
 import MiniCategoryCardContainer from "../../common/miniCategoryCard/MiniCategoryCardContainer";
+import { LinkGoBack } from "../../Custom/CustomComponents";
 
 const ProductDetail = ({ product, onAdd, open, handleClose }) => {
-
   return (
-    <div className={styles.categoryContainer}>
+    <Box>
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
@@ -17,10 +17,10 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           open={open}
           handleClose={handleClose}
         />
-        <div>
-          <ProductCardContainer product={product} onAdd={onAdd} show={false} />
-        </div>
-
+        <Box sx={{ width: "100%", marginTop: {md:"79px", xs: "30px"},padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" } }}>
+          <LinkGoBack>Go Back</LinkGoBack>
+        </Box>
+        <ProductCardContainer product={product} onAdd={onAdd} show={false} />
         <Box
           component={"section"}
           sx={{
@@ -28,6 +28,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             justifyContent: "space-between",
             flexDirection: { xs: "column", md: "row" },
             marginTop: "83px",
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
             gap: "40px",
             // padding: "20px",
             width: { xs: "100%" },
@@ -98,6 +99,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             flexDirection: { xs: "column", sm: "initial" },
             justifyContent: "space-between",
             // height: "600px"
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
           }}
         >
           <Box
@@ -139,6 +141,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             display: "flex",
             flexDirection: "column",
             marginTop: "50px",
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
           }}
         >
           <Typography variant="h5" align="center">
@@ -167,7 +170,6 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             />
           </Box>
         </Box>
-
         <Box
           sx={{
             width: "100%",
@@ -175,6 +177,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             flexDirection: { xs: "column", sm: "row" },
             gap: "50px",
             marginTop: "100px",
+            padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
           }}
         >
           <MiniCategoryCardContainer
@@ -191,7 +194,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
           />
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 export default ProductDetail;

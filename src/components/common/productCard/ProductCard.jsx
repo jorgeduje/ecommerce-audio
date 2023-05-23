@@ -1,91 +1,78 @@
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+// import CardContent from "@mui/material/CardContent";
+// import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import styles from "./ProductCard.module.css";
 import { ButtonCustom } from "../../Custom/CustomComponents";
-import { useWindowSize } from "../../../utils/useWindowSize";
+// import { useWindowSize } from "../../../utils/useWindowSize";
 import { Link } from "react-router-dom";
 import ContadorContainer from "../contador/ContadorContainer";
+import { Box } from "@mui/material";
 
 const ProductCard = ({ product, index, show, onAdd }) => {
-  const size = useWindowSize();
+  // const size = useWindowSize();
+
 
   let isPair = index % 2 === 0;
 
   return (
     <>
       <Card
-        className={styles.cardContainer}
         key={product.id}
         sx={{
           width: "100%",
-          height: "35rem",
           display: "flex",
-          flexDirection: isPair ? "row" : "row-reverse",
-          boxShadow: "none !important",
-          margin: "4rem 0",
+          paddingLeft: show ? { lg: "10rem", md: "7.5rem", xs: "1.5rem" } : { lg: "10rem", md: "2.5rem", xs: "1.5rem" },
+          paddingRight: show ?{ lg: "10rem", md: "7.5rem", xs: "1.5rem" } : { lg: "10rem", md: "2.5rem", xs: "1.5rem" },
+          paddingTop: show ? { lg: "10rem", xs: "7.5rem" } : { md: "3rem", xs: "1.5rem" },
+          flexDirection: show ? { md: isPair ? "row" : "row-reverse", xs: "column" } : {sm: "row", xs: "column" },
+          boxShadow: "none",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
-        {/* desktop img */}
-        {size.width > 900 && (
-          <CardMedia
-            className={styles.imgContainer}
-            component="img"
-            image={product.image}
-            alt="img"
-          />
-        )}
-        {/* tablet img */}
-        {size.width > 600 && size.width < 900 && (
-          <CardMedia
-            className={styles.imgContainer}
-            component="img"
-            image={product.image}
-            alt="green iguana"
-          />
-        )}
-        {/* mobile img */}
-        {size.width < 600 && (
-          <CardMedia
-            className={styles.imgContainer}
-            component="img"
-            image={product.image}
-            alt={product.name}
-          />
-        )}
-        <CardContent
-          className={styles.infoContainer}
+        <Box
           sx={{
+            height: show ? { lg: "560px", md: "530px", xs: "352px" } : { lg: "560px", md: "530px", sm: "480px", xs: "352px" },
+            width: show ? { lg: "47.5%", md: "42.5%", xs: "100%" } : { lg: "47.5%", md: "42.5%", sm: "35%", xs: "100%" },
+            backgroundImage: `url(${product.image})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            borderRadius: "8px",
+            backgroundPosition: "center",
+          }}
+        ></Box>
+        <Box
+          sx={{
+            height: show ? { md: "343px", sm: "302px", xs: "300px" } : { md: "343px", sm: "380px", xs: "360px" },
+            width: show ? { lg: "445px", md: "343px", sm: "572px", xs: "100%" } : { lg: "445px", md: "443px", sm: "60%", xs: "100%" },
             display: "flex",
+            marginTop: show ? { md: "0px", xs: "52px" } : { sm: "0px", xs: "52px" },
             flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            height: " 100%",
-            width: "50%",
-            paddingLeft: isPair ? "9rem" : "0",
-            paddingRight: isPair ? "0" : "9rem",
-            gap: " 2rem",
+            alignItems: show ? { md: "start", xs: "center" } : { xs: "start" },
+            justifyContent: "space-between",
           }}
         >
-          {/* new product title */}
-          {/* <Typography
-        variant="p"
-        sx={{
-          color: "primary.main",
-          fontWeight: " 400",
-          fontSize: " 14px",
-          lineHeight: "19.12px",
-          letterSpacing: " 10px",
-        }}
-      >
-        NEW PRODUCT
-      </Typography>  */}
-
-          <Typography variant="h1" className={styles.productName}>
+          <Typography
+            sx={{
+              fontWeight: "700",
+              fontSize: { sm: "40px", xs: "28px" },
+              lineHeight: "44px",
+              letterSpacing: "1.42857px",
+              textTransform: "uppercase",
+              textAlign: show ? { md: "start", xs: "center" } : {  xs: "start" },
+            }}
+          >
             {product.name}
           </Typography>
-          <Typography variant="body2" className={styles.detail}>
+          <Typography
+            sx={{
+              textAlign: show ? { md: "start", xs: "center" } : {  xs: "start" },
+              fontWeight: "500",
+              fontSize: "15px",
+              lineHeight: "25px",
+              opacity: "0.5",
+            }}
+          >
             {product.description}
           </Typography>
           {show ? (
@@ -96,7 +83,6 @@ const ProductCard = ({ product, index, show, onAdd }) => {
               <ButtonCustom
                 style={{
                   width: "10rem",
-                  textTransform: "capitalize",
                   textDecoration: "none",
                 }}
               >
@@ -105,11 +91,22 @@ const ProductCard = ({ product, index, show, onAdd }) => {
             </Link>
           ) : (
             <>
-              <Typography variant="h3">$ {product.price}</Typography>{" "}
+              <Typography
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  textTransform: "uppercase",
+                  width: "100%",
+                  textAlign: { xs: "start" },
+                }}
+              >
+                $ {product.price}
+              </Typography>{" "}
               <ContadorContainer onAdd={onAdd} />{" "}
             </>
           )}
-        </CardContent>
+        </Box>
       </Card>
     </>
   );
