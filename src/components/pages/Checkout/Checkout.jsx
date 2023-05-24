@@ -17,15 +17,16 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
     <Grid
       container
       sx={{
-        padding: {
-          xs: "20px 0px",
-          sm: "48px 0px",
-          lg: "80px 0px",
-        },
+        alignItems: "center",
         backgroundColor: "primary.third",
         display: "flex",
         flexDirection: "column",
         flexGrow: 1,
+        padding: {
+          xs: "20px 30px",
+          sm: "48px 50px",
+          lg: "80px 70px",
+        },
       }}
     >
       <Box
@@ -33,10 +34,9 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
           width: {
             xs: "90%",
             sm: "80%",
-            md: "730px",
+            md: "69%",
           },
         }}
-        paddingLeft={"160px"}
         mb={"40px"}
       >
         <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
@@ -50,7 +50,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
               width: {
                 xs: "90%",
                 sm: "80%",
-                md: "730px",
+                md: "69%",
               },
             }}
             className="gridContainer"
@@ -635,7 +635,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
                   color={theme.palette.primary.main}
                 >{`$${grandTotal.toFixed(2)}`}</Typography>
               </Box>
-              <ButtonCustom type="submit">Continue & Pay  </ButtonCustom>
+              <ButtonCustom type="submit" sx={{width: "100%"}}>Continue & Pay  </ButtonCustom>
             </>
           </Grid>
         </Grid>
