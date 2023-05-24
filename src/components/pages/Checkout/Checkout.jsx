@@ -22,33 +22,28 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
         display: "flex",
         flexDirection: "column",
         flexGrow: 1,
-        padding: {
-          xs: "20px 30px",
-          sm: "48px 50px",
-          lg: "80px 70px",
-        },
       }}
     >
       <Box
         sx={{
           width: {
-            xs: "90%",
+            xs: "100%",
             sm: "80%",
-            md: "69%",
+            md: "84%",
           },
         }}
-        mb={"40px"}
+        padding={"30px"}
       >
         <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
       </Box>
 
       <form className="formContainer" onSubmit={handleSubmit}>
-        <Grid container spacing={4} gap={4}  >
+        <Grid container gap={4}  >
           <Grid
             item
             sx={{
               width: {
-                xs: "90%",
+                xs: "100%",
                 sm: "80%",
                 md: "69%",
               },
@@ -460,7 +455,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
             item
             sx={{
               width: {
-                xs: "90%",
+                xs: "100%",
                 sm: "80%",
                 md: "350px",
               },
