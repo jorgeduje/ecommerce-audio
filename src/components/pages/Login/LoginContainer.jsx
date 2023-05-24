@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Login from "./Login";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
@@ -30,7 +30,7 @@ const LoginContainer = () => {
     validateOnChange: false,
   });
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
