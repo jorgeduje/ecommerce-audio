@@ -562,8 +562,9 @@ const Home = () => {
               flexDirection: { xs: "column", sm: "row" },
               alignItems: "center",
               padding: { lg: "0 10rem", md: "0 2.5rem", xs: "0 1.5rem" },
-              marginTop: "40px",
+              marginTop: "90px",
               justifyContent: "space-between",
+              gap: "30px"
             }}
           >
             <MiniCategoryCardContainer
