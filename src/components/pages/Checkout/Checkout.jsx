@@ -17,11 +17,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
     <Grid
       container
       sx={{
-        padding: {
-          xs: "20px 0px",
-          sm: "48px 0px",
-          lg: "80px 0px",
-        },
+        alignItems: "center",
         backgroundColor: "primary.third",
         display: "flex",
         flexDirection: "column",
@@ -31,26 +27,25 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
       <Box
         sx={{
           width: {
-            xs: "90%",
+            xs: "100%",
             sm: "80%",
-            md: "730px",
+            md: "84%",
           },
         }}
-        paddingLeft={"160px"}
-        mb={"40px"}
+        padding={"30px"}
       >
         <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
       </Box>
 
       <form className="formContainer" onSubmit={handleSubmit}>
-        <Grid container spacing={4} gap={4}  >
+        <Grid container gap={4}  >
           <Grid
             item
             sx={{
               width: {
-                xs: "90%",
+                xs: "100%",
                 sm: "80%",
-                md: "730px",
+                md: "69%",
               },
             }}
             className="gridContainer"
@@ -460,7 +455,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
             item
             sx={{
               width: {
-                xs: "90%",
+                xs: "100%",
                 sm: "80%",
                 md: "350px",
               },
@@ -635,7 +630,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
                   color={theme.palette.primary.main}
                 >{`$${grandTotal.toFixed(2)}`}</Typography>
               </Box>
-              <ButtonCustom type="submit">Continue & Pay  </ButtonCustom>
+              <ButtonCustom type="submit" sx={{width: "100%"}}>Continue & Pay  </ButtonCustom>
             </>
           </Grid>
         </Grid>
