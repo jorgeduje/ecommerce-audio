@@ -69,11 +69,11 @@ const Header = ({ size, navigate, menu, open, handleOpen, handleClose }) => {
             <Box className={styles.loginBox}>
               <Link to="/register" className={styles.linkSign}>
                 {" "}
-                Signin{" "}
+                Register{" "}
               </Link>
               <hr />
               <Link to="/login" className={styles.linkSign}>
-                Login
+                Log In
               </Link>
             </Box>
             <IconButton
