@@ -1,18 +1,27 @@
-import { ButtonCustom, CssTextField, LinkGoBack } from "../../Custom/CustomComponents";
+import {
+  ButtonCustom,
+  CssTextField,
+  LinkGoBack,
+} from "../../Custom/CustomComponents";
 import { Grid, Box, Typography, RadioGroup } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import "./checkout.css";
-import { useSelector } from "react-redux";
 import { theme } from "../../../themeConfig";
 
-const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
-  const { cart, total } = useSelector((store) => store.cartSlice);
-  let shipping = 50;
-  let vat = total * 0.21;
-  let grandTotal = total + vat + shipping;
-
+const Checkout = ({
+  shipping,
+  vat,
+  navigate,
+  handleChange,
+  handleSubmit,
+  errors,
+  values,
+  cart,
+  grandTotal,
+  total
+}) => {
   return (
     <Grid
       container
@@ -38,7 +47,7 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
       </Box>
 
       <form className="formContainer" onSubmit={handleSubmit}>
-        <Grid container gap={4}  >
+        <Grid container gap={4}>
           <Grid
             item
             sx={{
@@ -49,7 +58,6 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
               },
             }}
             className="gridContainer"
-            
           >
             <Typography
               variant="h1"
@@ -381,7 +389,9 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
                       label="Cash"
                     />
                   </RadioGroup>
-                  {errors.paymentMethod && <span className="errors">{errors.paymentMethod}</span>}
+                  {errors.paymentMethod && (
+                    <span className="errors">{errors.paymentMethod}</span>
+                  )}
                 </FormControl>
               </Grid>
               {values.paymentMethod === "e-money" && (
@@ -630,11 +640,12 @@ const Checkout = ({ navigate, handleChange, handleSubmit, errors, values }) => {
                   color={theme.palette.primary.main}
                 >{`$${grandTotal.toFixed(2)}`}</Typography>
               </Box>
-              <ButtonCustom type="submit" sx={{width: "100%"}}>Continue & Pay  </ButtonCustom>
+              <ButtonCustom type="submit" sx={{ width: "100%" }}>
+                Continue & Pay{" "}
+              </ButtonCustom>
             </>
           </Grid>
         </Grid>
-        
       </form>
     </Grid>
   );

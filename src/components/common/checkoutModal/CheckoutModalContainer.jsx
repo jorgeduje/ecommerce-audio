@@ -1,24 +1,27 @@
-import { useState } from "react";
 import CheckoutModal from "./CheckoutModal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const CheckoutModalContainer = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const { cart, items, total } = useSelector((store) => store.cartSlice);
+const CheckoutModalContainer = ({
+  open,
+  handleOpen,
+  handleClose,
+  grandTotal,
+}) => {
+  const { cart, items } = useSelector((store) => store.cartSlice);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <CheckoutModal
       cart={cart}
       items={items}
-      total={total}
       open={open}
       handleOpen={handleOpen}
       handleClose={handleClose}
       navigate={navigate}
+      dispatch={dispatch}
+      grandTotal={grandTotal}
     />
   );
 };
