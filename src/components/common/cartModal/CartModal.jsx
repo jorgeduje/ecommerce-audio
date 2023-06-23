@@ -100,7 +100,7 @@ const CartModal = ({
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Box
                       sx={{
-                        backgroundImage:`url(${e.image})`,
+                        backgroundImage: `url(${e.image})`,
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
                         marginRight: "10px",
@@ -123,7 +123,9 @@ const CartModal = ({
                           },
                         }}
                       >
-                        <DeleteIcon sx={{ fontSize: "30px", color: "primary.main" }} />
+                        <DeleteIcon
+                          sx={{ fontSize: "30px", color: "primary.main" }}
+                        />
                       </IconButton>
                     </Box>
                     <Box>
@@ -175,7 +177,12 @@ const CartModal = ({
               </Typography>
               <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
             </Box>
-            <ButtonCustom onClick={() => navigate("/checkout")}>
+            <ButtonCustom
+              onClick={() => {
+                handleClose();
+                navigate("/checkout");
+              }}
+            >
               checkout
             </ButtonCustom>
           </>
