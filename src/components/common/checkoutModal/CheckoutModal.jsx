@@ -97,9 +97,22 @@ const CheckoutModal = ({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
-                  height: cart.length < 1 ? "100%" : "50%",
+                  height: cart.length <= 1 ? "100%" : "50%",
                 }}
               >
+                <Box
+                  sx={{
+                    width: cart.length <= 1 ? "100px" : "50px",
+                  }}
+                >
+                  <img
+                    src={cart[0].image}
+                    alt={cart[0].name.split(" ")[0]}
+                    style={{
+                      width: cart.length <= 1 ? "100px" : "50px",
+                    }}
+                  />
+                </Box>
                 <Box>
                   <Typography
                     sx={{
