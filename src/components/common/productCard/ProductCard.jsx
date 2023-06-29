@@ -1,15 +1,12 @@
 import Card from "@mui/material/Card";
-// import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
+
 import Typography from "@mui/material/Typography";
 import { ButtonCustom } from "../../Custom/CustomComponents";
-// import { useWindowSize } from "../../../utils/useWindowSize";
 import { Link } from "react-router-dom";
 import ContadorContainer from "../contador/ContadorContainer";
 import { Box } from "@mui/material";
 
 const ProductCard = ({ product, index, show, onAdd }) => {
-  // const size = useWindowSize();
 
 
   let isPair = index % 2 === 0;

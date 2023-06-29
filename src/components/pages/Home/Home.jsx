@@ -5,7 +5,6 @@ import Loading from "../../common/loading/Loading";
 import { getAllProducts } from "../../../services/products";
 import { useEffect, useState } from "react";
 import MiniCategoryCardContainer from "../../common/miniCategoryCard/MiniCategoryCardContainer";
-// // import { ButtonCustom } from "../../Custom/CustomComponents";
 import imageSpeakerZx9 from "../../../assets/home/desktop/image-speaker-zx9.png";
 import imageSpeakerZx7Desktop from "../../../assets/home/desktop/image-speaker-zx7.jpg";
 import imageSpeakerZx7Tablet from "../../../assets/home/tablet/image-speaker-zx7.jpg";
@@ -57,7 +56,6 @@ const Home = () => {
     });
   }, []);
 
-  // console.log(items);
   console.log(productsDeseados);
 
   if (!items) {
@@ -207,10 +205,6 @@ const Home = () => {
             <Box
               sx={{
                 backgroundColor: "primary.main",
-                // backgroundImage: `url(${imageSpeakerZx9})` /*url de assets*/,
-                // backgroundRepeat: "no-repeat",
-                // backgroundPosition: "160px 104px",
-                // backgroundSize: "370px 470px",
                 width: "100%",
                 height: { md: "560px", xs: "720px" },
                 borderRadius: "8px",
@@ -499,10 +493,10 @@ const Home = () => {
                   textAlign: { md: "start", xs: "center" },
                 }}
               >
-                Bringing you the{" "}
+                Bringing you the
                 <Typography variant="span" sx={{ color: "primary.main" }}>
                   best
-                </Typography>{" "}
+                </Typography>
                 audio gear
               </Typography>
               <Typography

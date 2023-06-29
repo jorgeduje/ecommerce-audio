@@ -50,18 +50,18 @@ const CheckoutContainer = () => {
       paymentMethod: Yup.string().required("Este es campo es obligatorio"),
       eMoneyNumber: Yup.number().when('paymentMethod', {
         is: "e-money",
-        then: Yup.number().required('Este es campo es obligatorio'),
+        then:() => Yup.number().required('Este es campo es obligatorio') 
     }),
       eMoneyPin: Yup.number().when('paymentMethod', {
         is: "e-money",
-        then: Yup.number().required('Este es campo es obligatorio'),
+        then:() => Yup.number().required('Este es campo es obligatorio') 
     }),
     }),
     validateOnChange: false,
   });
 
   const navigate = useNavigate();
-
+console.log(errors);
   return (
     <>
       <Checkout
