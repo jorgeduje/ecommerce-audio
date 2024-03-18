@@ -1,6 +1,5 @@
 
 import axios from "axios"
-
 let productsConfig = {
     baseURL: import.meta.env.VITE_URL_PRODUCTS ,
     Headers: {
