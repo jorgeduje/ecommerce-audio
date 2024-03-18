@@ -160,14 +160,17 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
             <SuggestionsContainer
               images={product.categoryImage}
               name={product.name}
+              id={product.id}
             />
             <SuggestionsContainer
               images={product.categoryImage}
               name={product.name}
+              id={product.id}
             />
             <SuggestionsContainer
               images={product.categoryImage}
               name={product.name}
+              id={product.id}
             />
           </Box>
         </Box>

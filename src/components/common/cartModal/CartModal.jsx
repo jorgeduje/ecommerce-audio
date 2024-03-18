@@ -177,12 +177,9 @@ const CartModal = ({
               </Typography>
               <Typography sx={{ fontWeight: "700" }}>{`$${total}`}</Typography>
             </Box>
-            <ButtonCustom
-              onClick={() => {
-                handleClose();
-                navigate("/checkout");
-              }}
-            >
+            <ButtonCustom onClick={() => {
+              handleClose()
+              navigate("/checkout") }}>
               checkout
             </ButtonCustom>
           </>

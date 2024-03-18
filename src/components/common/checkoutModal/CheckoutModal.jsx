@@ -131,7 +131,7 @@ const CheckoutModal = ({
                       fontSize: "14px",
                       lineHeight: "25px",
                     }}
-                  >{`$${cart[0].unit_price}`}</Typography>
+                  >{`$${cart[0]?.unit_price}`}</Typography>
                 </Box>
                 <Typography
                   sx={{
@@ -139,7 +139,7 @@ const CheckoutModal = ({
                     opacity: "0.5",
                     fontWeight: "700",
                   }}
-                >{`x${cart[0].quantity}`}</Typography>
+                >{`x${cart[0]?.quantity}`}</Typography>
               </Box>
               {cart.length > 1 && (
                 <>
