@@ -106,8 +106,8 @@ const CheckoutModal = ({
                   }}
                 >
                   <img
-                    src={cart[0].image}
-                    alt={cart[0].name.split(" ")[0]}
+                    src={cart[0]?.image}
+                    alt={cart[0]?.name?.split(" ")[0]}
                     style={{
                       width: cart.length <= 1 ? "100px" : "50px",
                     }}
@@ -121,7 +121,7 @@ const CheckoutModal = ({
                       lineHeight: "25px",
                     }}
                   >
-                    {cart[0].name.split(" ")[0]}
+                    {cart[0]?.name?.split(" ")[0]}
                   </Typography>
                   <Typography
                     sx={{

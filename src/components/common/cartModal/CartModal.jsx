@@ -136,7 +136,7 @@ const CartModal = ({
                           lineHeight: "25px",
                         }}
                       >
-                        {e.name.split(" ")[0]}
+                        {e?.name?.split(" ")[0]}
                       </Typography>
                       <Typography
                         sx={{
@@ -150,7 +150,7 @@ const CartModal = ({
                     </Box>
                   </Box>
 
-                  <CartCounter id={e.id} quantity={e.quantity} />
+                  {/* <CartCounter id={e.id} quantity={e.quantity} /> */}
                   {/* <h1 key={e.id}>{e.name}</h1>
                 <button onClick={() => deleteById(e.id)}>delete</button>
                 <CartCounter id={e.id} quantity={e.quantity} /> */}

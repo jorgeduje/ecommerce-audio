@@ -48,6 +48,7 @@ const ProductDetail = ({ product, onAdd, open, handleClose }) => {
               variant="body2"
               className={styles.featuresContainer}
               lineHeight="25px"
+              sx={{whiteSpace: "pre-line"}}
             >
               {product.features}
             </Typography>

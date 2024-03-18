@@ -516,7 +516,7 @@ const Checkout = ({
                       }}
                     >
                       <img
-                        src={e.image}
+                        src={e?.image}
                         alt="product image"
                         className="productImg"
                       />
@@ -528,7 +528,7 @@ const Checkout = ({
                             lineHeight: "25px",
                           }}
                         >
-                          {e.name.split(" ")[0]}
+                          {e?.name?.split(" ")[0]}
                         </Typography>
                         <Typography
                           sx={{

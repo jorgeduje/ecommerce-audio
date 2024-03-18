@@ -2,6 +2,12 @@
 import ProductCardContainer from "../../common/productCard/ProductCardContainer";
 
 const ProductsList = ({ items }) => {
+
+
+
+
+
+  
   return (
     <div>
       {items.map((product, i) => (

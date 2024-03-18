@@ -184,19 +184,19 @@ const Home = () => {
             }}
           >
             <MiniCategoryCardContainer
-              images={items?.[0]?.image}
-              category={items?.[0]?.category}
+              images={"https://res.cloudinary.com/dnqfh2chg/image/upload/v1687462647/image_eha3mu.png"}
+              title={"earphones"}
             />
             <MiniCategoryCardContainer
-              images={items?.[1]?.image}
-              category={items?.[1]?.category}
+              images={"https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637814/audiophileEcommerce/product-yx-earphones/desktop/image-product_btj1gh.jpg"}
+              title={"headphones"}
             />
             <MiniCategoryCardContainer
-              images={items?.[2]?.image}
-              category={items?.[2]?.category}
+              images={"https://res.cloudinary.com/dwqrlr45w/image/upload/v1682638036/audiophileEcommerce/product-zx7-speaker/desktop/image-product_r6smeq.jpg"}
+              title={"speakers"}
             />
           </Box>
-          <Box
+          <Box  
             sx={{
               // backgroundColor: "primary.main",
               width: "100%",
